@@ -1,0 +1,8 @@
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\bin\Debug\SalaryRateConsole.exe.config
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\bin\Debug\SalaryRateConsole.exe
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\bin\Debug\SalaryRateConsole.pdb
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\bin\Debug\SalaryRateModel.dll
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\bin\Debug\SalaryRateModel.pdb
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.csprojResolveAssemblyReference.cache
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.exe
+c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.pdb
