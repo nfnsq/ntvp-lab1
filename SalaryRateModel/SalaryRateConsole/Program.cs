@@ -69,26 +69,32 @@ namespace SalaryRateConsole
             switch (way)
             {
                 case 1:
+                    //вводд данных
                     Console.WriteLine("Enter salary:");
                     double salary = ReadData();
                     Console.WriteLine("Enter amount worked day:");
                     double amountDay = ReadData();
+                    //создание экземпляра класса Fixed Rate
                     payAmount = new FixedRate(salary, amountDay);
                     break;
                 case 2:
+                    //ввод данных
                     Console.WriteLine("Enter salary:");
                     double salary1 = ReadData();
                     Console.WriteLine("Enter amount worked day:");
                     double amountDay1 = ReadData();
                     Console.WriteLine("Enter coeficient of rate:");
                     double rate = ReadData();
+                    //создание экземпляра класса Variable Rate
                     payAmount = new VariableRate(salary1, amountDay1, rate);
                     break;
                 case 3:
+                    //ввод данных
                     Console.WriteLine("Enter paid per hour:");
                     double paidPerHour = ReadData();
                     Console.WriteLine("Enter amount of worked hour:");
                     double hourAmount = ReadData();
+                    //создание экземпляра класса Hourly Rate
                     payAmount = new HourlyRate(paidPerHour, hourAmount);
                     break;
                 case 4:
