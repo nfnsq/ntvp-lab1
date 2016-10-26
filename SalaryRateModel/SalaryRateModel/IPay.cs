@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SalaryRateModel
 {
     /// <summary>
-    /// Объявление интерфейса и ег метода
+    /// Объявление интерфейса и его метода
     /// </summary>
     public interface IPay
     {
