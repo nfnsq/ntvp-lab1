@@ -40,8 +40,7 @@ namespace SalaryRateConsole
         /// В методе main вычисляется сумма заработной платы в зависимости
         /// от типа начисления
         /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             IPay payAmount = null;
             int way = 0;

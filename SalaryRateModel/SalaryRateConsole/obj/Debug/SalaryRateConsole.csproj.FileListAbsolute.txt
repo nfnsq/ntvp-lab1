@@ -6,3 +6,6 @@ c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\Sala
 c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.csprojResolveAssemblyReference.cache
 c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.exe
 c:\users\интант\documents\visual studio 2013\Projects\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Debug\SalaryRateConsole.exe.config
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.exe
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\obj\Debug\SalaryRateConsole.pdb
