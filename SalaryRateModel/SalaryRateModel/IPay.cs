@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SalaryRateModel
 {
+    /// <summary>
+    /// Объявление интерфейса и ег метода
+    /// </summary>
     public interface IPay
     {
         double GetSumm();
