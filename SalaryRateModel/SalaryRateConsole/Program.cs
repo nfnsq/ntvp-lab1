@@ -42,7 +42,7 @@ namespace SalaryRateConsole
         /// </summary>
         static void Main()
         {
-            IPay payAmount = null;
+            IEmployee payAmount = null;
             int way = 0;
             Console.WriteLine("Select type of rate:");
             while (way != 1 && way != 2 && way != 3 && way != 4)
@@ -102,7 +102,7 @@ namespace SalaryRateConsole
             }
             if (payAmount != null)
             {
-                Console.WriteLine("Paid amount of salary:" + payAmount.GetSumm());
+                Console.WriteLine("Paid amount of salary:" + payAmount.GetSummOfPay());
                 Console.ReadLine();
             }
         }

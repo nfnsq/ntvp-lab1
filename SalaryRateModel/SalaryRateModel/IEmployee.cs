@@ -9,8 +9,8 @@ namespace SalaryRateModel
     /// <summary>
     /// Объявление интерфейса и его метода
     /// </summary>
-    public interface IPay
+    public interface IEmployee
     {
-        double GetSumm();
+        double GetSummOfPay();
     }
 }

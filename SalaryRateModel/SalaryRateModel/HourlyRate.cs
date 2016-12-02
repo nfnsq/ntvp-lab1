@@ -9,7 +9,7 @@ namespace SalaryRateModel
     /// <summary>
     /// Класс, где рассчитывается сумма зарплаты по почасовой оплате
     /// </summary>
-    public class HourlyRate : IPay
+    public class HourlyRate : IEmployee
     {
         private double _paidPerHour;    //тариф за час
         private double _hourAmount;     //количество проработанных часов
@@ -29,7 +29,7 @@ namespace SalaryRateModel
         /// Реализация метода интерфейса ISalary
         /// </summary>
         /// <returns>Сумма заработной платы</returns>
-        public double GetSumm()
+        public double GetSummOfPay()
         {
             return _paidPerHour * _hourAmount;
         }

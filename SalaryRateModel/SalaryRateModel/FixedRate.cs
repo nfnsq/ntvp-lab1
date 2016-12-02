@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalaryRateModel
 {
-    public class FixedRate : IPay
+    public class FixedRate : IEmployee
     {
         private double _salary;
         private double _amountDay;
@@ -25,7 +25,7 @@ namespace SalaryRateModel
         /// Реализация метода интерфейса ISalary
         /// </summary>
         /// <returns>Сумма заработной платы</returns>
-        public double GetSumm()
+        public double GetSummOfPay()
         {
             return _salary / 20 * _amountDay;
         }

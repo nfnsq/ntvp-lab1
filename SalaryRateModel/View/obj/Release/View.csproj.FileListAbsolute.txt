@@ -1,0 +1,12 @@
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Release\View.exe.config
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Release\View.exe
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Release\View.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Release\SalaryRateModel.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Release\SalaryRateModel.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.csprojResolveAssemblyReference.cache
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.AddObjectForm.resources
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.SalaryRateForm.resources
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.Properties.Resources.resources
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.csproj.GenerateResource.Cache
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.exe
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.pdb

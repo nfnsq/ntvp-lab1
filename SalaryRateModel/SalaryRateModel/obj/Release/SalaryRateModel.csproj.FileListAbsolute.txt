@@ -1,0 +1,4 @@
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\SalaryRateModel.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\SalaryRateModel.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Release\SalaryRateModel.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Release\SalaryRateModel.pdb

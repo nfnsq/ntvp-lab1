@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="FixedRate.cs" />
     <Compile Include="HourlyRate.cs" />
-    <Compile Include="IPay.cs" />
+    <Compile Include="IEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VariableRate.cs" />
   </ItemGroup>
