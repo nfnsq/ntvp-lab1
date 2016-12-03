@@ -22,11 +22,19 @@ namespace View
         /// </summary>
         public static IEmployee employee = null;
 
+        /// <summary>
+        /// Инициализация формы
+        /// </summary>
         public SalaryRateForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Создание объекта, и добавление в DataGrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddPerson_Click(object sender, EventArgs e)
         {
             AddObjectForm addObjectForm = new AddObjectForm();
@@ -62,52 +70,73 @@ namespace View
         /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
-
-            dt.Columns.Add("Surname");
-            dt.Columns.Add("Name");
-            dt.Columns.Add("Pay amount");
-            
-            for (int i = 0; i < dataGridViewObject.Rows.Count; i++)
+            try
             {
-                dt.Rows.Add(dataGridViewObject.Rows[i].Cells[0].Value, 
-                    dataGridViewObject.Rows[i].Cells[1].Value, 
-                    dataGridViewObject.Rows[i].Cells[2].Value);
-            }
+                DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
+                dt.TableName = "Employee";
+                dt.Columns.Add("Surname");
+                dt.Columns.Add("Name");
+                dt.Columns.Add("Pay amount");
+                ds.Tables.Add(dt);
 
-            SaveFileDialog sfd = new SaveFileDialog();
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                string path = sfd.FileName;
-                var writer = new System.Xml.Serialization.XmlSerializer(typeof(DataSet));
-                using (var file = System.IO.File.Create(path))
+                foreach (DataGridViewRow r in dataGridViewObject.Rows)
                 {
-                    writer.Serialize(file, ds);
-                    file.Close();
+                    DataRow row = ds.Tables["Employee"].NewRow();
+                    row["Surname"] = r.Cells[0].Value;
+                    row["Name"] = r.Cells[1].Value;
+                    row["Pay amount"] = r.Cells[2].Value;
+                    ds.Tables["Employee"].Rows.Add(row);
                 }
-            } 
-        }
 
+                SaveFileDialog sfd = new SaveFileDialog();
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string path = sfd.FileName;
+                    ds.WriteXml(path);
+                    MessageBox.Show("XML file has been succesfully saved.", "Done.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Unable to save file.", "Error.");
+            }
+        }
+        /// <summary>
+        /// Десериализация
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (dataGridViewObject.Rows.Count > 0) //если в таблице больше нуля строк
             {
-                string path = ofd.FileName;
-                var reader = new System.Xml.Serialization.XmlSerializer(typeof(DataTable));
-                var file = new System.IO.StreamReader(path);
-                dt = (DataTable)reader.Deserialize(file);
+                MessageBox.Show("Please drop data from DataGrid before" + 
+                    " downloading new file.", "Error.");
             }
-
-            for (int i = 0; i < dt.Rows.Count; i++)
+            else
             {
-                dataGridViewObject.Rows.Add(dt.Rows[i].Field<string>(0),
-                    dt.Rows[i].Field<string>(1),
-                    dt.Rows[i].Field<string>(2));
+                try
+                {
+                    DataSet ds = new DataSet(); // создаем новый пустой кэш данных
+                    OpenFileDialog ofd = new OpenFileDialog();
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        string path = ofd.FileName;
+                        ds.ReadXml(path); // записываем в кэш XML-данные из файла
+                    }
+                    foreach (DataRow item in ds.Tables["Employee"].Rows)
+                    {
+                        int n = dataGridViewObject.Rows.Add();
+                        dataGridViewObject.Rows[n].Cells[0].Value = item["Surname"];
+                        dataGridViewObject.Rows[n].Cells[1].Value = item["Name"];
+                        dataGridViewObject.Rows[n].Cells[2].Value = item["Pay amount"];
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Unable to read file.", "Error.");
+                }
             }
         }
     }

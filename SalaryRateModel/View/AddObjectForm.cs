@@ -63,7 +63,8 @@ namespace View
             }
             catch (FormatException)
             {
-                MessageBox.Show("Oops! There are empty fields. Please, try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Oops! There are empty fields. Please, try again.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

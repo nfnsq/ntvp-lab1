@@ -79,6 +79,7 @@
             // 
             // dataGridViewObject
             // 
+            this.dataGridViewObject.AllowUserToAddRows = false;
             this.dataGridViewObject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewObject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PersonSurname,
@@ -86,6 +87,7 @@
             this.PayAmount});
             this.dataGridViewObject.Location = new System.Drawing.Point(12, 19);
             this.dataGridViewObject.Name = "dataGridViewObject";
+            this.dataGridViewObject.ReadOnly = true;
             this.dataGridViewObject.Size = new System.Drawing.Size(298, 111);
             this.dataGridViewObject.TabIndex = 0;
             // 
@@ -93,18 +95,21 @@
             // 
             this.PersonSurname.HeaderText = "Surname";
             this.PersonSurname.Name = "PersonSurname";
+            this.PersonSurname.ReadOnly = true;
             this.PersonSurname.Width = 70;
             // 
             // PersonName
             // 
             this.PersonName.HeaderText = "Name";
             this.PersonName.Name = "PersonName";
+            this.PersonName.ReadOnly = true;
             this.PersonName.Width = 70;
             // 
             // PayAmount
             // 
             this.PayAmount.HeaderText = "Pay Amount";
             this.PayAmount.Name = "PayAmount";
+            this.PayAmount.ReadOnly = true;
             // 
             // openFileDialog1
             // 
