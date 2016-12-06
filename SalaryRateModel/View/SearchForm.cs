@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Text.RegularExpressions;
 
 namespace View
 {
     public partial class SearcherForm : Form
     {
+        /// <summary>
+        /// Таблица для результатов поиска
+        /// </summary>
         private DataTable searchResult = new DataTable();
-        
+        /// <summary>
+        /// Формирование талбицы
+        /// </summary>
         private void setSearchResults()
         {
             searchResult.TableName = "Result";
@@ -22,36 +26,45 @@ namespace View
             searchResult.Columns.Add("Name");
             searchResult.Columns.Add("Pay amount");
         }
-        
+        /// <summary>
+        /// Инициализация формы для поиска
+        /// </summary>
         public SearcherForm()
         {
             InitializeComponent();
-//            groupBoxObject.Visible = false;
-//            menuStrip1.Visible = false;
             setSearchResults();
             dataGridViewResult.DataSource = searchResult;
-            
-        }
 
+        }
+        /// <summary>
+        /// Реализация поиска
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             searchResult.Clear();
-                       
             if (textBoxSearchData != null)
             {
-                //Regex regex = new Regex(textBoxSearchData.Text);
-                foreach (DataRow r in SalaryRateForm.t.Rows)
+                try
                 {
-                    foreach (string str in r.ItemArray)
+                    foreach (DataRow r in SalaryRateForm.dt.Rows)
                     {
-                        if (textBoxSearchData.Text == str)
+                        foreach (string str in r.ItemArray)
                         {
-                            searchResult.Rows.Add(r["Surname"], r["Name"], r["Pay amount"]);
-                            // break;
+                            if (textBoxSearchData.Text == str)
+                            {
+                                searchResult.Rows.Add(r["Surname"], r["Name"], r["Pay amount"]);
+                            }
                         }
                     }
                 }
+                catch
+                {
+                    MessageBox.Show("Oops! Something don't work. Please, again with correct data.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-       }
+        }
     }
 }

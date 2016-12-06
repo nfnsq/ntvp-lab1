@@ -62,6 +62,7 @@
             // textBoxSearchData
             // 
             this.textBoxSearchData.Location = new System.Drawing.Point(15, 30);
+            this.textBoxSearchData.MaxLength = 10;
             this.textBoxSearchData.Name = "textBoxSearchData";
             this.textBoxSearchData.Size = new System.Drawing.Size(259, 20);
             this.textBoxSearchData.TabIndex = 0;

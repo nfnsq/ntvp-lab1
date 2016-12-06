@@ -26,19 +26,6 @@ namespace SalaryRateModel
             this._paidPerHour = paidPerHour;
             this._hourAmount = hourAmount;
         }
-
-        /*public string Surname
-        {
-            get
-            {
-                return this._personSurname;
-            }
-            set
-            {
-                _personSurname = Surname;
-            }
-        }
-        */
         /// <summary>
         /// Реализация метода интерфейса ISalary
         /// </summary>

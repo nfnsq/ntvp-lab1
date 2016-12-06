@@ -145,14 +145,14 @@
 
         private System.Windows.Forms.Button buttonRemovePerson;
         private System.Windows.Forms.Button buttonAddPerson;
-        public System.Windows.Forms.DataGridView dataGridViewObject;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        public System.Windows.Forms.GroupBox groupBoxObject;
-        public System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridView dataGridViewObject;
+        private System.Windows.Forms.GroupBox groupBoxObject;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

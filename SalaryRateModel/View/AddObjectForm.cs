@@ -13,8 +13,12 @@ namespace View
 {
     public partial class AddObjectForm : Form
     {
+        /// <summary>
+        /// Массив Имен и Фамилий
+        /// </summary>
         string[] PersonNames = { "Alice", "Bob", "Cara", "Dean", "Bruce" };
         string[] PersonSurnames = { "Wayne", "Hunter", "Bee", "Tatch", "Sean" };
+        private IEmployee employee = null;
         /// <summary>
         /// Инициализация формы
         /// </summary>
@@ -46,25 +50,25 @@ namespace View
                 {
                     double salary = double.Parse(maskedTextBoxSalary.Text);
                     double amountDay = double.Parse(maskedTextBoxAmountDay.Text);
-                    SalaryRateForm.employee = new FixedRate(salary, amountDay);
+                    employee = new FixedRate(salary, amountDay);
                 }
                 if (radioButtonHourly.Checked)
                 {
                     double paidPerHour = double.Parse(maskedTextBoxPaidPerHour.Text);
                     double hourAmount = double.Parse(maskedTextBoxHourAmount.Text);
-                    SalaryRateForm.employee = new HourlyRate(paidPerHour, hourAmount);
+                    employee = new HourlyRate(paidPerHour, hourAmount);
                 }
                 if (radioButtonVariable.Checked)
                 {
                     double salary = double.Parse(maskedTextBoxSalary.Text);
                     double amountDay = double.Parse(maskedTextBoxAmountDay.Text);
                     double rate = double.Parse(maskedTextBoxRate.Text);
-                    SalaryRateForm.employee = new VariableRate(salary, amountDay, rate);
+                    employee = new VariableRate(salary, amountDay, rate);
                 }
-                if (SalaryRateForm.employee != null)
+                if (employee != null)
                 {
-                    SalaryRateForm.t.Rows.Add(maskedTextBoxPersonSurname.Text, 
-                        maskedTextBoxPersonName.Text, SalaryRateForm.employee.GetSummOfPay());
+                    SalaryRateForm.dt.Rows.Add(maskedTextBoxPersonSurname.Text, 
+                        maskedTextBoxPersonName.Text, employee.GetSummOfPay());
                 }
                 Close();
             }
@@ -144,7 +148,7 @@ namespace View
         /// <param name="e"></param>
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            SalaryRateForm.employee = null;
+            employee = null;
             Close();
         }
 

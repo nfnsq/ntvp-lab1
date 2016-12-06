@@ -15,21 +15,31 @@ namespace View
     public partial class SalaryRateForm : Form
     {
         /// <summary>
-        /// Объявление "глобальной переменной"
-        /// Создается объект интерфейса Iemployee,
-        /// который является свойством SalaryRateForm 
-        /// с правами общего доступа
+        /// г*внокодеры созают глобальные переменные!
+        /// Создается таблица, которая является DataSource 
+        /// для DataGridViewObject
         /// </summary>
-        public static IEmployee employee = null;
-
-        public static DataTable t = new DataTable();
-
-        private void SetT()
+        public static DataTable dt = new DataTable();
+        /// <summary>
+        /// Создается объект кэша данных
+        /// </summary>
+        private DataSet ds = new DataSet();
+        /// <summary>
+        /// Формирование DataSet
+        /// </summary>
+        private void SetDS()
         {
-            t.TableName = "Employee";
-            t.Columns.Add("Surname");
-            t.Columns.Add("Name");
-            t.Columns.Add("Pay amount");
+            ds.Tables.Add(dt);
+        }
+        /// <summary>
+        /// Формирование таблицы Employee
+        /// </summary>
+        private void SetDT()
+        {
+            dt.TableName = "Employee";
+            dt.Columns.Add("Surname");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Pay amount");
 
         }
 
@@ -39,8 +49,9 @@ namespace View
         public SalaryRateForm()
         {
             InitializeComponent();
-            dataGridViewObject.DataSource = t;
-            SetT();
+            dataGridViewObject.DataSource = dt;
+            SetDT();
+            SetDS();
         }
 
         /// <summary>
@@ -52,9 +63,6 @@ namespace View
         {
             AddObjectForm addObjectForm = new AddObjectForm();
             addObjectForm.ShowDialog();
-
-            //После закрытия AddObjectForm
-           
         }
 
         /// <summary>
@@ -82,13 +90,6 @@ namespace View
         {
             try
             {
-//                DataTable dt = new DataTable();
-                DataSet ds = new DataSet();
-//                dt.TableName = "Employee";
-//                dt.Columns.Add("Surname");
-//                dt.Columns.Add("Name");
-//                dt.Columns.Add("Pay amount");
-                ds.Tables.Add(t);
 
                 SaveFileDialog sfd = new SaveFileDialog();
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -128,7 +129,7 @@ namespace View
                     }
                     foreach (DataRow item in ds.Tables["Employee"].Rows)
                     {
-                        t.Rows.Add(item["Surname"], item["Name"], item["Pay amount"]);
+                        dt.Rows.Add(item["Surname"], item["Name"], item["Pay amount"]);
                     }
                 }
                 catch

@@ -1,8 +1,23 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <Employee>
-    <Surname>a</Surname>
-    <Name>b</Name>
-    <Pay_x0020_amount>166695,3</Pay_x0020_amount>
+    <Surname>Wayne</Surname>
+    <Name>Alice</Name>
+    <Pay_x0020_amount>32805</Pay_x0020_amount>
+  </Employee>
+  <Employee>
+    <Surname>Hunter</Surname>
+    <Name>Bob</Name>
+    <Pay_x0020_amount>51664,95</Pay_x0020_amount>
+  </Employee>
+  <Employee>
+    <Surname>Sean</Surname>
+    <Name>Bruce</Name>
+    <Pay_x0020_amount>345363,6</Pay_x0020_amount>
+  </Employee>
+  <Employee>
+    <Surname>Bee</Surname>
+    <Name>Cara</Name>
+    <Pay_x0020_amount>640120,32</Pay_x0020_amount>
   </Employee>
 </NewDataSet>

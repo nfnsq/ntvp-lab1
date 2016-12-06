@@ -11,8 +11,6 @@ namespace SalaryRateModel
     /// </summary>
     public interface IEmployee
     {
-//        string Name { get; set; }
-//        string Surname { get; set; }
         double GetSummOfPay();
     }
 }
