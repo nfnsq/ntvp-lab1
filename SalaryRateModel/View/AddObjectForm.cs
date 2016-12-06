@@ -13,6 +13,8 @@ namespace View
 {
     public partial class AddObjectForm : Form
     {
+        string[] PersonNames = { "Alice", "Bob", "Cara", "Dean", "Bruce" };
+        string[] PersonSurnames = { "Wayne", "Hunter", "Bee", "Tatch", "Sean" };
         /// <summary>
         /// Инициализация формы
         /// </summary>
@@ -58,6 +60,11 @@ namespace View
                     double amountDay = double.Parse(maskedTextBoxAmountDay.Text);
                     double rate = double.Parse(maskedTextBoxRate.Text);
                     SalaryRateForm.employee = new VariableRate(salary, amountDay, rate);
+                }
+                if (SalaryRateForm.employee != null)
+                {
+                    SalaryRateForm.t.Rows.Add(maskedTextBoxPersonSurname.Text, 
+                        maskedTextBoxPersonName.Text, SalaryRateForm.employee.GetSummOfPay());
                 }
                 Close();
             }
@@ -148,6 +155,13 @@ namespace View
         /// <param name="e"></param>
         private void buttonRandomData_Click(object sender, EventArgs e)
         {
+
+            Random RandomName = new Random();
+            maskedTextBoxPersonName.Text = PersonNames[RandomName.Next(PersonNames.Length)];
+
+            Random RandomSurname = new Random();
+            maskedTextBoxPersonSurname.Text = PersonSurnames[RandomSurname.Next(PersonSurnames.Length)];
+
             if (radioButtonFixed.Checked)
             {
                 Random salaryRandom = new Random();

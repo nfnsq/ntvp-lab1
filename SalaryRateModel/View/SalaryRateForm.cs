@@ -22,12 +22,25 @@ namespace View
         /// </summary>
         public static IEmployee employee = null;
 
+        public static DataTable t = new DataTable();
+
+        private void SetT()
+        {
+            t.TableName = "Employee";
+            t.Columns.Add("Surname");
+            t.Columns.Add("Name");
+            t.Columns.Add("Pay amount");
+
+        }
+
         /// <summary>
         /// Инициализация формы
         /// </summary>
         public SalaryRateForm()
         {
             InitializeComponent();
+            dataGridViewObject.DataSource = t;
+            SetT();
         }
 
         /// <summary>
@@ -41,10 +54,7 @@ namespace View
             addObjectForm.ShowDialog();
 
             //После закрытия AddObjectForm
-            if (employee != null)
-            {
-                dataGridViewObject.Rows.Add(' ',' ',employee.GetSummOfPay());
-            }
+           
         }
 
         /// <summary>
@@ -72,22 +82,13 @@ namespace View
         {
             try
             {
-                DataTable dt = new DataTable();
+//                DataTable dt = new DataTable();
                 DataSet ds = new DataSet();
-                dt.TableName = "Employee";
-                dt.Columns.Add("Surname");
-                dt.Columns.Add("Name");
-                dt.Columns.Add("Pay amount");
-                ds.Tables.Add(dt);
-
-                foreach (DataGridViewRow r in dataGridViewObject.Rows)
-                {
-                    DataRow row = ds.Tables["Employee"].NewRow();
-                    row["Surname"] = r.Cells[0].Value;
-                    row["Name"] = r.Cells[1].Value;
-                    row["Pay amount"] = r.Cells[2].Value;
-                    ds.Tables["Employee"].Rows.Add(row);
-                }
+//                dt.TableName = "Employee";
+//                dt.Columns.Add("Surname");
+//                dt.Columns.Add("Name");
+//                dt.Columns.Add("Pay amount");
+                ds.Tables.Add(t);
 
                 SaveFileDialog sfd = new SaveFileDialog();
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -127,10 +128,7 @@ namespace View
                     }
                     foreach (DataRow item in ds.Tables["Employee"].Rows)
                     {
-                        int n = dataGridViewObject.Rows.Add();
-                        dataGridViewObject.Rows[n].Cells[0].Value = item["Surname"];
-                        dataGridViewObject.Rows[n].Cells[1].Value = item["Name"];
-                        dataGridViewObject.Rows[n].Cells[2].Value = item["Pay amount"];
+                        t.Rows.Add(item["Surname"], item["Name"], item["Pay amount"]);
                     }
                 }
                 catch
@@ -138,6 +136,17 @@ namespace View
                     MessageBox.Show("Unable to read file.", "Error.");
                 }
             }
+        }
+        /// <summary>
+        /// Поиск
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewObject.Update();
+            SearcherForm searchForm = new SearcherForm();
+            searchForm.ShowDialog();
         }
     }
 }

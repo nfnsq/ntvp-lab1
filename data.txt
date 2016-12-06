@@ -1,18 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <NewDataSet>
   <Employee>
-    <Surname xml:space="preserve"> </Surname>
-    <Name xml:space="preserve"> </Name>
-    <Pay_x0020_amount>410825,7</Pay_x0020_amount>
-  </Employee>
-  <Employee>
-    <Surname xml:space="preserve"> </Surname>
-    <Name xml:space="preserve"> </Name>
-    <Pay_x0020_amount>246402</Pay_x0020_amount>
-  </Employee>
-  <Employee>
-    <Surname xml:space="preserve"> </Surname>
-    <Name xml:space="preserve"> </Name>
-    <Pay_x0020_amount>354961,116</Pay_x0020_amount>
+    <Surname>a</Surname>
+    <Name>b</Name>
+    <Pay_x0020_amount>166695,3</Pay_x0020_amount>
   </Employee>
 </NewDataSet>

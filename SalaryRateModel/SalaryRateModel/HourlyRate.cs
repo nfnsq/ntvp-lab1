@@ -13,6 +13,8 @@ namespace SalaryRateModel
     {
         private double _paidPerHour;    //тариф за час
         private double _hourAmount;     //количество проработанных часов
+        private string _personName;
+        private string _personSurname;
 
         /// <summary>
         /// Определение параметризированного конструктора класса для инициализации объекта
@@ -25,6 +27,18 @@ namespace SalaryRateModel
             this._hourAmount = hourAmount;
         }
 
+        /*public string Surname
+        {
+            get
+            {
+                return this._personSurname;
+            }
+            set
+            {
+                _personSurname = Surname;
+            }
+        }
+        */
         /// <summary>
         /// Реализация метода интерфейса ISalary
         /// </summary>

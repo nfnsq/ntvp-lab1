@@ -32,14 +32,12 @@
             this.buttonRemovePerson = new System.Windows.Forms.Button();
             this.buttonAddPerson = new System.Windows.Forms.Button();
             this.dataGridViewObject = new System.Windows.Forms.DataGridView();
-            this.PersonSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PersonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PayAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxObject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObject)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -52,14 +50,14 @@
             this.groupBoxObject.Controls.Add(this.dataGridViewObject);
             this.groupBoxObject.Location = new System.Drawing.Point(12, 27);
             this.groupBoxObject.Name = "groupBoxObject";
-            this.groupBoxObject.Size = new System.Drawing.Size(310, 171);
+            this.groupBoxObject.Size = new System.Drawing.Size(389, 171);
             this.groupBoxObject.TabIndex = 0;
             this.groupBoxObject.TabStop = false;
             this.groupBoxObject.Text = "Objects";
             // 
             // buttonRemovePerson
             // 
-            this.buttonRemovePerson.Location = new System.Drawing.Point(210, 136);
+            this.buttonRemovePerson.Location = new System.Drawing.Point(289, 136);
             this.buttonRemovePerson.Name = "buttonRemovePerson";
             this.buttonRemovePerson.Size = new System.Drawing.Size(94, 26);
             this.buttonRemovePerson.TabIndex = 2;
@@ -69,7 +67,7 @@
             // 
             // buttonAddPerson
             // 
-            this.buttonAddPerson.Location = new System.Drawing.Point(110, 136);
+            this.buttonAddPerson.Location = new System.Drawing.Point(189, 136);
             this.buttonAddPerson.Name = "buttonAddPerson";
             this.buttonAddPerson.Size = new System.Drawing.Size(94, 26);
             this.buttonAddPerson.TabIndex = 1;
@@ -81,35 +79,11 @@
             // 
             this.dataGridViewObject.AllowUserToAddRows = false;
             this.dataGridViewObject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewObject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PersonSurname,
-            this.PersonName,
-            this.PayAmount});
             this.dataGridViewObject.Location = new System.Drawing.Point(12, 19);
             this.dataGridViewObject.Name = "dataGridViewObject";
             this.dataGridViewObject.ReadOnly = true;
-            this.dataGridViewObject.Size = new System.Drawing.Size(298, 111);
+            this.dataGridViewObject.Size = new System.Drawing.Size(371, 111);
             this.dataGridViewObject.TabIndex = 0;
-            // 
-            // PersonSurname
-            // 
-            this.PersonSurname.HeaderText = "Surname";
-            this.PersonSurname.Name = "PersonSurname";
-            this.PersonSurname.ReadOnly = true;
-            this.PersonSurname.Width = 70;
-            // 
-            // PersonName
-            // 
-            this.PersonName.HeaderText = "Name";
-            this.PersonName.Name = "PersonName";
-            this.PersonName.ReadOnly = true;
-            this.PersonName.Width = 70;
-            // 
-            // PayAmount
-            // 
-            this.PayAmount.HeaderText = "Pay Amount";
-            this.PayAmount.Name = "PayAmount";
-            this.PayAmount.ReadOnly = true;
             // 
             // openFileDialog1
             // 
@@ -119,10 +93,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
-            this.openToolStripMenuItem});
+            this.openToolStripMenuItem,
+            this.searchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(334, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(413, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,11 +115,18 @@
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            // 
             // SalaryRateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 361);
+            this.ClientSize = new System.Drawing.Size(413, 210);
             this.Controls.Add(this.groupBoxObject);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -161,18 +143,16 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxObject;
         private System.Windows.Forms.Button buttonRemovePerson;
         private System.Windows.Forms.Button buttonAddPerson;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PersonSurname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PersonName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PayAmount;
         public System.Windows.Forms.DataGridView dataGridViewObject;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        public System.Windows.Forms.GroupBox groupBoxObject;
+        public System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

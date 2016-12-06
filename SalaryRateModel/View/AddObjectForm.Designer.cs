@@ -31,9 +31,8 @@
             this.groupBoxData = new System.Windows.Forms.GroupBox();
             this.buttonRandomData = new System.Windows.Forms.Button();
             this.radioButtonFixed = new System.Windows.Forms.RadioButton();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPersonName = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPersonSurname = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxHourAmount = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPaidPerHour = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxRate = new System.Windows.Forms.MaskedTextBox();
@@ -47,7 +46,6 @@
             this.amountDayLabel = new System.Windows.Forms.Label();
             this.salaryLabel = new System.Windows.Forms.Label();
             this.typeOfRateLabel = new System.Windows.Forms.Label();
-            this.secondNameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.surnameLabel = new System.Windows.Forms.Label();
             this.radioButtonHourly = new System.Windows.Forms.RadioButton();
@@ -59,9 +57,8 @@
             // 
             this.groupBoxData.Controls.Add(this.buttonRandomData);
             this.groupBoxData.Controls.Add(this.radioButtonFixed);
-            this.groupBoxData.Controls.Add(this.maskedTextBox3);
-            this.groupBoxData.Controls.Add(this.maskedTextBox2);
-            this.groupBoxData.Controls.Add(this.maskedTextBox1);
+            this.groupBoxData.Controls.Add(this.maskedTextBoxPersonName);
+            this.groupBoxData.Controls.Add(this.maskedTextBoxPersonSurname);
             this.groupBoxData.Controls.Add(this.maskedTextBoxHourAmount);
             this.groupBoxData.Controls.Add(this.maskedTextBoxPaidPerHour);
             this.groupBoxData.Controls.Add(this.maskedTextBoxRate);
@@ -75,7 +72,6 @@
             this.groupBoxData.Controls.Add(this.amountDayLabel);
             this.groupBoxData.Controls.Add(this.salaryLabel);
             this.groupBoxData.Controls.Add(this.typeOfRateLabel);
-            this.groupBoxData.Controls.Add(this.secondNameLabel);
             this.groupBoxData.Controls.Add(this.nameLabel);
             this.groupBoxData.Controls.Add(this.surnameLabel);
             this.groupBoxData.Controls.Add(this.radioButtonHourly);
@@ -110,33 +106,24 @@
             this.radioButtonFixed.UseVisualStyleBackColor = true;
             this.radioButtonFixed.CheckedChanged += new System.EventHandler(this.radioButtonFixed_CheckedChanged);
             // 
-            // maskedTextBox3
+            // maskedTextBoxPersonName
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(112, 71);
-            this.maskedTextBox3.Mask = ">?<?????????";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.PromptChar = ' ';
-            this.maskedTextBox3.Size = new System.Drawing.Size(69, 20);
-            this.maskedTextBox3.TabIndex = 32;
+            this.maskedTextBoxPersonName.Location = new System.Drawing.Point(112, 45);
+            this.maskedTextBoxPersonName.Mask = ">?<?????????";
+            this.maskedTextBoxPersonName.Name = "maskedTextBoxPersonName";
+            this.maskedTextBoxPersonName.PromptChar = ' ';
+            this.maskedTextBoxPersonName.Size = new System.Drawing.Size(69, 20);
+            this.maskedTextBoxPersonName.TabIndex = 31;
             // 
-            // maskedTextBox2
+            // maskedTextBoxPersonSurname
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(112, 45);
-            this.maskedTextBox2.Mask = ">?<?????????";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PromptChar = ' ';
-            this.maskedTextBox2.Size = new System.Drawing.Size(69, 20);
-            this.maskedTextBox2.TabIndex = 31;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.maskedTextBox1.Location = new System.Drawing.Point(112, 19);
-            this.maskedTextBox1.Mask = ">?<?????????????";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PromptChar = ' ';
-            this.maskedTextBox1.Size = new System.Drawing.Size(93, 20);
-            this.maskedTextBox1.TabIndex = 30;
+            this.maskedTextBoxPersonSurname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.maskedTextBoxPersonSurname.Location = new System.Drawing.Point(112, 19);
+            this.maskedTextBoxPersonSurname.Mask = ">?<?????????????";
+            this.maskedTextBoxPersonSurname.Name = "maskedTextBoxPersonSurname";
+            this.maskedTextBoxPersonSurname.PromptChar = ' ';
+            this.maskedTextBoxPersonSurname.Size = new System.Drawing.Size(93, 20);
+            this.maskedTextBoxPersonSurname.TabIndex = 30;
             // 
             // maskedTextBoxHourAmount
             // 
@@ -267,15 +254,6 @@
             this.typeOfRateLabel.TabIndex = 9;
             this.typeOfRateLabel.Text = "Type of rate";
             // 
-            // secondNameLabel
-            // 
-            this.secondNameLabel.AutoSize = true;
-            this.secondNameLabel.Location = new System.Drawing.Point(14, 74);
-            this.secondNameLabel.Name = "secondNameLabel";
-            this.secondNameLabel.Size = new System.Drawing.Size(75, 13);
-            this.secondNameLabel.TabIndex = 8;
-            this.secondNameLabel.Text = "Second Name";
-            // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
@@ -335,7 +313,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxData;
-        private System.Windows.Forms.Label secondNameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label typeOfRateLabel;
         private System.Windows.Forms.Label amountDayLabel;
@@ -352,9 +329,8 @@
         public System.Windows.Forms.MaskedTextBox maskedTextBoxRate;
         public System.Windows.Forms.MaskedTextBox maskedTextBoxAmountDay;
         public System.Windows.Forms.MaskedTextBox maskedTextBoxSalary;
-        public System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        public System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        public System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        public System.Windows.Forms.MaskedTextBox maskedTextBoxPersonName;
+        public System.Windows.Forms.MaskedTextBox maskedTextBoxPersonSurname;
         public System.Windows.Forms.Button buttonCancel;
         public System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonRandomData;
