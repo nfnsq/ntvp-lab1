@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SalaryRateModel
+﻿namespace SalaryRateModel
 {
+    /// <summary>
+    /// Класс, где рассчитывается сумма зарплаты по 
+    /// окладу
+    /// </summary>
     public class FixedRate : IEmployee
     {
         private double _salary;

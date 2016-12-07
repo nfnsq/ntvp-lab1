@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SalaryRateModel
+﻿namespace SalaryRateModel
 {
     /// <summary>
-    /// 
+    /// Класс, где рассчитывается сумма зарплаты по
+    /// ставке
     /// </summary>
     public class VariableRate : IEmployee
     {

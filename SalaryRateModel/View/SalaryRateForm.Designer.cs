@@ -63,7 +63,7 @@
             this.buttonRemovePerson.TabIndex = 2;
             this.buttonRemovePerson.Text = "Remove Person";
             this.buttonRemovePerson.UseVisualStyleBackColor = true;
-            this.buttonRemovePerson.Click += new System.EventHandler(this.buttonRemovePerson_Click);
+            this.buttonRemovePerson.Click += new System.EventHandler(this.ButtonRemovePerson_Click);
             // 
             // buttonAddPerson
             // 
@@ -73,7 +73,7 @@
             this.buttonAddPerson.TabIndex = 1;
             this.buttonAddPerson.Text = "Add Person";
             this.buttonAddPerson.UseVisualStyleBackColor = true;
-            this.buttonAddPerson.Click += new System.EventHandler(this.buttonAddPerson_Click);
+            this.buttonAddPerson.Click += new System.EventHandler(this.ButtonAddPerson_Click);
             // 
             // dataGridViewObject
             // 
@@ -106,21 +106,21 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.searchToolStripMenuItem.Text = "Search";
-            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.SearchToolStripMenuItem_Click);
             // 
             // SalaryRateForm
             // 

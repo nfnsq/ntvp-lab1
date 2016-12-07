@@ -10,3 +10,4 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Releas
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.csproj.GenerateResource.Cache
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.exe
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Release\View.SearcherForm.resources

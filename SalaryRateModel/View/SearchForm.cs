@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
@@ -15,35 +9,38 @@ namespace View
         /// <summary>
         /// Таблица для результатов поиска
         /// </summary>
-        private DataTable searchResult = new DataTable();
+        private DataTable _searchResult = new DataTable();
+
         /// <summary>
         /// Формирование талбицы
         /// </summary>
-        private void setSearchResults()
+        private void SetSearchResults()
         {
-            searchResult.TableName = "Result";
-            searchResult.Columns.Add("Surname");
-            searchResult.Columns.Add("Name");
-            searchResult.Columns.Add("Pay amount");
+            _searchResult.TableName = "Result";
+            _searchResult.Columns.Add("Surname");
+            _searchResult.Columns.Add("Name");
+            _searchResult.Columns.Add("Pay amount");
         }
+
         /// <summary>
         /// Инициализация формы для поиска
         /// </summary>
         public SearcherForm()
         {
             InitializeComponent();
-            setSearchResults();
-            dataGridViewResult.DataSource = searchResult;
+            SetSearchResults();
+            dataGridViewResult.DataSource = _searchResult;
 
         }
+
         /// <summary>
         /// Реализация поиска
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            searchResult.Clear();
+            _searchResult.Clear();
             if (textBoxSearchData != null)
             {
                 try
@@ -54,7 +51,7 @@ namespace View
                         {
                             if (textBoxSearchData.Text == str)
                             {
-                                searchResult.Rows.Add(r["Surname"], r["Name"], r["Pay amount"]);
+                                 RowToTableIncreaser.DoAdd(r, _searchResult);
                             }
                         }
                     }
