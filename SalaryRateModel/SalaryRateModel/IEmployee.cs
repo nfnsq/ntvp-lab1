@@ -1,10 +1,15 @@
 ﻿namespace SalaryRateModel
 {
     /// <summary>
-    /// Объявление интерфейса и его метода
+    /// Интерфейс Сотрудник
     /// </summary>
     public interface IEmployee
     {
+        /// <summary>
+        /// Метод возвращает сумму зарплаты для
+        /// интерфейса Сотрудник
+        /// </summary>
+        /// <returns></returns>
         double GetSummOfPay();
     }
 }

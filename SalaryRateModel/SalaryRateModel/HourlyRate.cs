@@ -1,32 +1,40 @@
-﻿namespace SalaryRateModel
+﻿using System;
+
+namespace SalaryRateModel
 {
     /// <summary>
     /// Класс, где рассчитывается сумма зарплаты по почасовой оплате
     /// </summary>
     public class HourlyRate : IEmployee
     {
-        private double _paidPerHour;    //тариф за час
-        private double _hourAmount;     //количество проработанных часов
-        private string _personName;
-        private string _personSurname;
+        private double[] _list = new double[0];
 
         /// <summary>
-        /// Определение параметризированного конструктора класса для инициализации объекта
+        /// Параметризированный конструктор класса
         /// </summary>
-        /// <param name="paidPerHour">Тариф</param>
-        /// <param name="hourAmount">Количество проработанных часов</param>
-        public HourlyRate(double paidPerHour, double hourAmount)
+        /// <param name="list">Список входных параметров</param>
+        public HourlyRate(params double[] list)
         {
-            this._paidPerHour = paidPerHour;
-            this._hourAmount = hourAmount;
+            for (int i = 0; i < list.Length; i++)
+            {
+                Array.Resize<double>(ref _list, i + 1);
+                this._list[i] = list[i];
+            }
         }
+
         /// <summary>
-        /// Реализация метода интерфейса ISalary
+        /// Метод возвращает сумму зарплаты по почасовой оплате
         /// </summary>
-        /// <returns>Сумма заработной платы</returns>
         public double GetSummOfPay()
         {
-            return _paidPerHour * _hourAmount;
+            try
+            {
+                return _list[0] * _list[1];
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }

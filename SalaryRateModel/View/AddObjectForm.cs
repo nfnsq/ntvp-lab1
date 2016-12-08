@@ -14,6 +14,7 @@ namespace View
         /// Создание объекта
         /// </summary>
         private IEmployee _employee = null;
+
         /// <summary>
         /// Инициализация формы
         /// </summary>
@@ -33,37 +34,42 @@ namespace View
         /// <param name="e"></param>
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            ///
-            ///Меняется значение интерфейса employee
-            ///который был объявлен в главной форме
-            ///в зависимости от выбора типа оплаты
-            ///
             try
             {
+                int length = 0;
+                double[] parameters = new double[length];
+
+                foreach (Control groupBoxCD in this.Controls)
+                {
+                    if ((groupBoxCD is GroupBox)
+                        && (groupBoxCD.Name == "groupBoxCountData"))
+                    {
+                        foreach (Control textbox in groupBoxCD.Controls)
+                        {
+                            if ((textbox is TextBox) && (textbox.Visible == true))
+                            {
+                                length++;
+                                Array.Resize<double>(ref parameters, length);
+                                parameters[length - 1] = double.Parse(textbox.Text,
+                                CultureInfo.InvariantCulture);
+                            }
+                        }
+                    }
+                }
+
                 if (radioButtonFixed.Checked)
-                {
-                    double salary = double.Parse(textBoxSalary.Text);
-                    double amountDay = double.Parse(textBoxAmountDay.Text);
-                    _employee = new FixedRate(salary, amountDay);
-                }
+                    _employee = new FixedRate(parameters);
+
                 if (radioButtonHourly.Checked)
-                {
-                    double paidPerHour = double.Parse(textBoxPaidPerHour.Text);
-                    double hourAmount = double.Parse(textBoxHourAmount.Text);
-                    _employee = new HourlyRate(paidPerHour, hourAmount);
-                }
+                    _employee = new HourlyRate(parameters);
+                
                 if (radioButtonVariable.Checked)
-                {
-                    double salary = double.Parse(textBoxSalary.Text);
-                    double amountDay = double.Parse(textBoxAmountDay.Text);
-                    double rate = double.Parse(textBoxRate.Text, CultureInfo.InvariantCulture);
-                    _employee = new VariableRate(salary, amountDay, rate);
-                }
+                    _employee = new VariableRate(parameters);
+                
                 if (_employee != null)
-                {
                     SalaryRateForm.dt.Rows.Add(textBoxPersonSurname.Text, 
                         textBoxPersonName.Text, _employee.GetSummOfPay());
-                }
+                
                 Close();
             }
             catch (FormatException)
@@ -107,20 +113,20 @@ namespace View
         {
             if (radioButtonVariable.Checked)
             {
-                textBoxSalary.Visible = true;
                 textBoxAmountDay.Visible = true;
+                textBoxSalary.Visible = true;
                 textBoxRate.Visible = true;
-                salaryLabel.Visible = true;
                 amountDayLabel.Visible = true;
+                salaryLabel.Visible = true;
                 rateLabel.Visible = true;
             }
             else
             {
-                textBoxSalary.Visible = false;
                 textBoxAmountDay.Visible = false;
+                textBoxSalary.Visible = false;
                 textBoxRate.Visible = false;
-                salaryLabel.Visible = false;
                 amountDayLabel.Visible = false;
+                salaryLabel.Visible = false;
                 rateLabel.Visible = false;
             }
         }
@@ -205,6 +211,7 @@ namespace View
                     break;
             }
         }
+        
         /// <summary>
         /// Метод валидации данных
         /// </summary>

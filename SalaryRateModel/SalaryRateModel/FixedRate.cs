@@ -1,4 +1,6 @@
-﻿namespace SalaryRateModel
+﻿using System;
+
+namespace SalaryRateModel
 {
     /// <summary>
     /// Класс, где рассчитывается сумма зарплаты по 
@@ -6,26 +8,34 @@
     /// </summary>
     public class FixedRate : IEmployee
     {
-        private double _salary;
-        private double _amountDay;
+        private double[] _list = new double[0];
+
         /// <summary>
-        /// Определение параметризированного конструктора класса для инициализации объекта
+        /// Параметризированный конструктор класса
         /// </summary>
-        /// <param name="salary">Оклад</param>
-        /// <param name="amountDay">Количество проработанных дней</param>
-        public FixedRate(double salary, double amountDay)
+        /// <param name="list">Список входных параметров</param>
+        public FixedRate(params double[] list)
         {
-            this._salary = salary;
-            this._amountDay = amountDay;
+            for (int i = 0; i < list.Length; i++)
+            {
+                Array.Resize<double>(ref _list, i + 1);
+                this._list[i] = list[i];
+            }
         }
 
         /// <summary>
-        /// Реализация метода интерфейса ISalary
+        /// Метод возвращает сумму зарплаты по окладу
         /// </summary>
-        /// <returns>Сумма заработной платы</returns>
         public double GetSummOfPay()
         {
-            return _salary / 20 * _amountDay;
+            try
+            {
+                return _list[1] / 20 * _list[0];
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
     }
