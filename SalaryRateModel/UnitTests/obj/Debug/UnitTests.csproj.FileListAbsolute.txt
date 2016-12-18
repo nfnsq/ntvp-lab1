@@ -1,0 +1,9 @@
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\SalaryRateModel.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\SalaryRateModel.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Debug\UnitTests.pdb

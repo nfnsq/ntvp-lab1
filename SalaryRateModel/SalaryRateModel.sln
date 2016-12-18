@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryRateConsole", "Salary
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{1002C6A2-E30B-4192-B0C7-B196E403B8E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{6E95246B-ACC9-46E6-8409-A953A6702F70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1002C6A2-E30B-4192-B0C7-B196E403B8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1002C6A2-E30B-4192-B0C7-B196E403B8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1002C6A2-E30B-4192-B0C7-B196E403B8E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E95246B-ACC9-46E6-8409-A953A6702F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E95246B-ACC9-46E6-8409-A953A6702F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E95246B-ACC9-46E6-8409-A953A6702F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E95246B-ACC9-46E6-8409-A953A6702F70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
