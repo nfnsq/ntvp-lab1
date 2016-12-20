@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1013]C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll</TopNode>
-  <SelectedNode>[0-1014]UnitTests</SelectedNode>
+  <TopNode>[0-1033]C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll</TopNode>
+  <SelectedNode>[0-1033]C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
-    <Node UniqueName="[0-1013]C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll" Expanded="true" />
-    <Node UniqueName="[0-1014]UnitTests" Expanded="true" />
-    <Node UniqueName="[0-1015]UnitTests.SalaryRateModel" Expanded="true" />
+    <Node UniqueName="[0-1033]C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1034]UnitTests" Expanded="true" />
+    <Node UniqueName="[0-1035]UnitTests.SalaryRateModel" Expanded="true" />
     <Node UniqueName="[0-1000]UnitTests.SalaryRateModel.FixedRateTest" Expanded="true" />
     <Node UniqueName="[0-1001]UnitTests.SalaryRateModel.FixedRateTest.FixedRate" Expanded="true" />
     <Node UniqueName="[0-1011]UnitTests.SalaryRateModel.HourlyRateTest" Expanded="true" />
+    <Node UniqueName="[0-1012]UnitTests.SalaryRateModel.HourlyRateTest.HourlyRate" Expanded="true" />
+    <Node UniqueName="[0-1022]UnitTests.SalaryRateModel.VariableRateTest" Expanded="true" />
+    <Node UniqueName="[0-1023]UnitTests.SalaryRateModel.VariableRateTest.VariableRate" Expanded="true" />
   </Nodes>
 </VisualState>

@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll" total="27" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2016-12-18" time="21:11:01">
+<test-results name="C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll" total="27" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2016-12-20" time="18:30:07">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8745" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="TANYA" user="интант" user-domain="TANYA" />
   <culture-info current-culture="ru-RU" current-uiculture="ru-RU" />
-  <test-suite type="Assembly" name="C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll" executed="True" result="Success" success="True" time="0.865" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\UnitTests.dll" executed="True" result="Success" success="True" time="0.803" asserts="0">
     <results>
-      <test-suite type="Namespace" name="UnitTests" executed="True" result="Success" success="True" time="0.789" asserts="0">
+      <test-suite type="Namespace" name="UnitTests" executed="True" result="Success" success="True" time="0.769" asserts="0">
         <results>
-          <test-suite type="Namespace" name="SalaryRateModel" executed="True" result="Success" success="True" time="0.763" asserts="0">
+          <test-suite type="Namespace" name="SalaryRateModel" executed="True" result="Success" success="True" time="0.758" asserts="0">
             <results>
               <test-suite type="TestFixture" name="FixedRateTest" executed="True" result="Success" success="True" time="0.387" asserts="0">
                 <results>
-                  <test-suite type="ParameterizedTest" name="FixedRate" executed="True" result="Success" success="True" time="0.327" asserts="0">
+                  <test-suite type="ParameterizedTest" name="FixedRate" executed="True" result="Success" success="True" time="0.335" asserts="0">
                     <results>
-                      <test-case name="UnitTests.SalaryRateModel.FixedRateTest.Тест при значениях параметров равных PositiveInfinity" executed="True" result="Success" success="True" time="0.176" asserts="1" />
+                      <test-case name="UnitTests.SalaryRateModel.FixedRateTest.Тест при значениях параметров равных PositiveInfinity" executed="True" result="Success" success="True" time="0.180" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.FixedRateTest.Тест при значениях параметров равных 1" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.FixedRateTest.Тест при значениях параметров равных MinValue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.FixedRateTest.Тест при значениях параметров равных MinValue - 1" executed="True" result="Success" success="True" time="0.000" asserts="1" />
@@ -26,9 +26,9 @@
                   </test-suite>
                 </results>
               </test-suite>
-              <test-suite type="TestFixture" name="HourlyRateTest" executed="True" result="Success" success="True" time="0.143" asserts="0">
+              <test-suite type="TestFixture" name="HourlyRateTest" executed="True" result="Success" success="True" time="0.161" asserts="0">
                 <results>
-                  <test-suite type="ParameterizedTest" name="HourlyRate" executed="True" result="Success" success="True" time="0.134" asserts="0">
+                  <test-suite type="ParameterizedTest" name="HourlyRate" executed="True" result="Success" success="True" time="0.142" asserts="0">
                     <results>
                       <test-case name="UnitTests.SalaryRateModel.HourlyRateTest.Тест при значениях параметров равных NaN" executed="True" result="Success" success="True" time="0.004" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.HourlyRateTest.Тест при значениях параметров равных MaxValue + 1" executed="True" result="Success" success="True" time="0.000" asserts="1" />
@@ -43,12 +43,12 @@
                   </test-suite>
                 </results>
               </test-suite>
-              <test-suite type="TestFixture" name="VariableRateTest" executed="True" result="Success" success="True" time="0.176" asserts="0">
+              <test-suite type="TestFixture" name="VariableRateTest" executed="True" result="Success" success="True" time="0.158" asserts="0">
                 <results>
-                  <test-suite type="ParameterizedTest" name="VariableRate" executed="True" result="Success" success="True" time="0.166" asserts="0">
+                  <test-suite type="ParameterizedTest" name="VariableRate" executed="True" result="Success" success="True" time="0.155" asserts="0">
                     <results>
                       <test-case name="UnitTests.SalaryRateModel.VariableRateTest.Тест при параметрах равных 1" executed="True" result="Success" success="True" time="0.004" asserts="1" />
-                      <test-case name="UnitTests.SalaryRateModel.VariableRateTest.Тест при параметрах равных NegativeInfinity" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="UnitTests.SalaryRateModel.VariableRateTest.Тест при параметрах равных NegativeInfinity" executed="True" result="Success" success="True" time="0.001" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.VariableRateTest.Тест при параметрах равных PositiveInfinity" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.VariableRateTest.Тест при параметрах равных MinValue" executed="True" result="Success" success="True" time="0.000" asserts="1" />
                       <test-case name="UnitTests.SalaryRateModel.VariableRateTest.Тест при параметрах равных MinValue - 1" executed="True" result="Success" success="True" time="0.000" asserts="1" />
