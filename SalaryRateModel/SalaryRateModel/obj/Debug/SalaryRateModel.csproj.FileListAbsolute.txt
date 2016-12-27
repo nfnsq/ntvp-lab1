@@ -7,3 +7,4 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Debug\SalaryRateModel.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\SalaryRateModel.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\SalaryRateModel.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Debug\SalaryRateModel.csprojResolveAssemblyReference.cache

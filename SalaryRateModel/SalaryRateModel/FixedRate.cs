@@ -6,7 +6,7 @@ namespace SalaryRateModel
     /// Класс, где рассчитывается сумма зарплаты по 
     /// окладу
     /// </summary>
-    public class FixedRate : IEmployee
+    public class FixedRate : Employee
     {
         private double[] _list = new double[0];
 
@@ -26,7 +26,7 @@ namespace SalaryRateModel
         /// <summary>
         /// Метод возвращает сумму зарплаты по окладу
         /// </summary>
-        public double GetSummOfPay()
+        public override double GetSummOfPay()
         {
             try
             {
@@ -37,6 +37,5 @@ namespace SalaryRateModel
                 return 0;
             }
         }
-
     }
 }

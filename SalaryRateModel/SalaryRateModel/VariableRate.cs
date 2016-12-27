@@ -6,7 +6,7 @@ namespace SalaryRateModel
     /// Класс, где рассчитывается сумма зарплаты по
     /// ставке
     /// </summary>
-    public class VariableRate : IEmployee
+    public class VariableRate : Employee
     {
         private double[] _list = new double[0];
 
@@ -26,7 +26,7 @@ namespace SalaryRateModel
         /// <summary>
         /// Метод возвращает сумму зарплаты по ставке
         /// </summary>
-        public double GetSummOfPay()
+        public override double GetSummOfPay()
         {
             try
             {

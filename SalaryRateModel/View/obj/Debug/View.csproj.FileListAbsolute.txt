@@ -11,3 +11,4 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\SalaryRateModel.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\SalaryRateModel.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.SearcherForm.resources
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.ObjectControl.resources

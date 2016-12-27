@@ -50,6 +50,12 @@
     <Compile Include="AddObjectForm.Designer.cs">
       <DependentUpon>AddObjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectControl.Designer.cs">
+      <DependentUpon>ObjectControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RowToTableIncreaser.cs" />
     <Compile Include="RandomDataCreator.cs" />
     <Compile Include="SalaryRateForm.cs">
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="AddObjectForm.resx">
       <DependentUpon>AddObjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectControl.resx">
+      <DependentUpon>ObjectControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryRateForm.resx">
       <DependentUpon>SalaryRateForm.cs</DependentUpon>

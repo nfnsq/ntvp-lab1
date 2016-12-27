@@ -10,10 +10,11 @@ namespace View
     public partial class AddObjectForm : Form
     {
 
+        private static int size = 0;
         /// <summary>
         /// Создание объекта
         /// </summary>
-        private IEmployee _employee = null;
+        private static Employee[] _employeeList = new Employee[size];
 
         /// <summary>
         /// Инициализация формы
@@ -56,20 +57,26 @@ namespace View
                         }
                     }
                 }
-
+                size = size + 1;
+                Array.Resize<Employee>(ref _employeeList, size);
+                
                 if (radioButtonFixed.Checked)
-                    _employee = new FixedRate(parameters);
-
+                {
+                    _employeeList[size - 1] = new FixedRate(parameters);
+                }
                 if (radioButtonHourly.Checked)
-                    _employee = new HourlyRate(parameters);
+                    _employeeList[size - 1] = new HourlyRate(parameters);
                 
                 if (radioButtonVariable.Checked)
-                    _employee = new VariableRate(parameters);
-                
-                if (_employee != null)
-                    SalaryRateForm.dt.Rows.Add(textBoxPersonSurname.Text, 
-                        textBoxPersonName.Text, _employee.GetSummOfPay());
-                
+                    _employeeList[size - 1] = new VariableRate(parameters);
+
+                if (_employeeList[size - 1] != null)
+                {
+                    _employeeList[size - 1].Name = textBoxPersonName.Text;
+                    _employeeList[size - 1].Surname = textBoxPersonSurname.Text;
+                    SalaryRateForm.dt.Rows.Add(_employeeList[size - 1].Surname,
+                        _employeeList[size - 1].Name, _employeeList[size - 1].GetSummOfPay());
+                }
                 Close();
             }
             catch (FormatException)
@@ -167,7 +174,6 @@ namespace View
         /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            _employee = null;
             Close();
         }
 

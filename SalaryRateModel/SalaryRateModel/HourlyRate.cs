@@ -5,7 +5,7 @@ namespace SalaryRateModel
     /// <summary>
     /// Класс, где рассчитывается сумма зарплаты по почасовой оплате
     /// </summary>
-    public class HourlyRate : IEmployee
+    public class HourlyRate : Employee
     {
         private double[] _list = new double[0];
 
@@ -25,7 +25,7 @@ namespace SalaryRateModel
         /// <summary>
         /// Метод возвращает сумму зарплаты по почасовой оплате
         /// </summary>
-        public double GetSummOfPay()
+        public override double GetSummOfPay()
         {
             try
             {

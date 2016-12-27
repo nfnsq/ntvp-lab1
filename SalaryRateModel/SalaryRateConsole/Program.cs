@@ -38,7 +38,7 @@ namespace SalaryRateConsole
         /// </summary>
         static void Main()
         {
-            IEmployee payAmount = null;
+            Employee payAmount = null;
             int way = 0;
             Console.WriteLine("Select type of rate:");
             while (way != 1 && way != 2 && way != 3 && way != 4)
