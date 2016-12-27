@@ -1,17 +1,20 @@
-﻿namespace SalaryRateModel
+﻿using Global;
+
+namespace SalaryRateModel
 {
     /// <summary>
-    /// Интерфейс Сотрудник
+    /// Класс Сотрудник
     /// </summary>
     public abstract class Employee
     {
         /// <summary>
         /// Метод возвращает сумму зарплаты для
-        /// интерфейса Сотрудник
+        /// абстрактного класса Сотрудник
         /// </summary>
         /// <returns></returns>
         public abstract double GetSummOfPay();
-
+        public abstract Parameter[] Parameters{ get; }
+        
         private string _name;
         public string Name
         {

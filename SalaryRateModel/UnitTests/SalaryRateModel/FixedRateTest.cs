@@ -28,7 +28,14 @@ namespace UnitTests.SalaryRateModel
             TestName = "Тест при значениях параметров равных PositiveInfinity")]
         public void FixedRate(double salary, double amountDay, double res)
         {
-            FixedRate pay = new FixedRate(salary, amountDay);
+            Global.Parameter _salary = new Global.Parameter();
+            Global.Parameter _amountDay = new Global.Parameter();
+            _salary.Value = salary;
+            _salary.Description = Global.Properties.Resources.Salary;
+            _amountDay.Value = amountDay;
+            _amountDay.Description = Global.Properties.Resources.DayAmount;
+
+            FixedRate pay = new FixedRate(_salary, _amountDay);
             
             double result = pay.GetSummOfPay();
 

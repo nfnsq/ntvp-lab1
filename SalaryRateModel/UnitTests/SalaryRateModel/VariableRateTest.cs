@@ -28,7 +28,17 @@ namespace UnitTests.SalaryRateModel
             TestName = "Тест при параметрах равных PositiveInfinity")]
         public void VariableRate(double salary, double amountDay, double rate, double res)
         {
-            VariableRate pay = new VariableRate(salary, amountDay, rate);
+            Global.Parameter _salary = new Global.Parameter();
+            Global.Parameter _amountDay = new Global.Parameter();
+            Global.Parameter _rate = new Global.Parameter();
+            _salary.Value = salary;
+            _salary.Description = Global.Properties.Resources.Salary;
+            _amountDay.Value = amountDay;
+            _amountDay.Description = Global.Properties.Resources.DayAmount;
+            _rate.Value = rate;
+            _rate.Description = Global.Properties.Resources.Rate;
+            
+            VariableRate pay = new VariableRate(_salary, _amountDay, _rate);
 
             double result = pay.GetSummOfPay();
 

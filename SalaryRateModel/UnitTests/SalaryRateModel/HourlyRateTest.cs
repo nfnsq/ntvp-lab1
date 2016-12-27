@@ -28,7 +28,14 @@ namespace UnitTests.SalaryRateModel
             TestName = "Тест при значениях параметров равных PositiveInfinity")]
         public void HourlyRate(double paidPerHour, double hourAmount, double res)
         {
-            HourlyRate pay = new HourlyRate(paidPerHour, hourAmount);
+            Global.Parameter _paidPerHour = new Global.Parameter();
+            Global.Parameter _hourAmount = new Global.Parameter();
+            _paidPerHour.Value = paidPerHour;
+            _paidPerHour.Description = Global.Properties.Resources.PaidPerHour;
+            _hourAmount.Value = hourAmount;
+            _hourAmount.Description = Global.Properties.Resources.HourAmount;
+
+            HourlyRate pay = new HourlyRate(_paidPerHour, _hourAmount);
 
             double result = pay.GetSummOfPay();
 

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using SalaryRateModel;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using Global;
 
 namespace View
 {
@@ -38,7 +39,7 @@ namespace View
             try
             {
                 int length = 0;
-                double[] parameters = new double[length];
+                Parameter[] parameters = new Parameter[length];
 
                 foreach (Control groupBoxCD in this.Controls)
                 {
@@ -50,9 +51,19 @@ namespace View
                             if ((textbox is TextBox) && (textbox.Visible == true))
                             {
                                 length++;
-                                Array.Resize<double>(ref parameters, length);
-                                parameters[length - 1] = double.Parse(textbox.Text,
+                                Array.Resize<Parameter>(ref parameters, length);
+                                parameters[length - 1].Value = double.Parse(textbox.Text,
                                 CultureInfo.InvariantCulture);
+                                if (textbox.Name == textBoxSalary.Name)
+                                    parameters[length - 1].Description = Global.Properties.Resources.Salary;
+                                if (textbox.Name == textBoxAmountDay.Name)
+                                    parameters[length - 1].Description = Global.Properties.Resources.DayAmount;
+                                if (textbox.Name == textBoxHourAmount.Name)
+                                    parameters[length - 1].Description = Global.Properties.Resources.HourAmount;
+                                if (textbox.Name == textBoxPaidPerHour.Name)
+                                    parameters[length - 1].Description = Global.Properties.Resources.PaidPerHour;
+                                if (textbox.Name == textBoxRate.Name)
+                                    parameters[length - 1].Description = Global.Properties.Resources.Rate;
                             }
                         }
                     }
