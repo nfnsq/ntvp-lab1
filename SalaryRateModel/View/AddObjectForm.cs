@@ -15,7 +15,7 @@ namespace View
         /// <summary>
         /// Создание объекта
         /// </summary>
-        private static Employee[] _employeeList = new Employee[size];
+        public static Employee[] _employeeList = new Employee[size];
 
         /// <summary>
         /// Инициализация формы

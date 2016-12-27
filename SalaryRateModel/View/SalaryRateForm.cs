@@ -89,7 +89,6 @@ namespace View
         {
             try
             {
-
                 SaveFileDialog sfd = new SaveFileDialog();
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {

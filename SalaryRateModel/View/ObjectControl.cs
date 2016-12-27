@@ -40,11 +40,13 @@ namespace View
             {
                 if (value == true)
                 {
-                    //readonly
+                    foreach (ObjectControl textbox in this.Controls)
+                        textbox.ReadOnly = true;
                 }
                 else
                 {
-                    //edit
+                    foreach (ObjectControl textbox in this.Controls)
+                        textbox.ReadOnly = false;
                 }
             }
         }

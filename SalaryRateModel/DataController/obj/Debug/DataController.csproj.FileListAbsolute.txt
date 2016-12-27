@@ -1,0 +1,7 @@
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\bin\Debug\DataController.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\bin\Debug\DataController.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\bin\Debug\Global.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\bin\Debug\Global.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\obj\Debug\DataController.csprojResolveAssemblyReference.cache
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\obj\Debug\DataController.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\DataController\obj\Debug\DataController.pdb

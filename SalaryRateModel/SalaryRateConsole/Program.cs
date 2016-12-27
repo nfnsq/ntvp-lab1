@@ -71,7 +71,13 @@ namespace SalaryRateConsole
                     Console.WriteLine("Enter amount worked day:");
                     double amountDay = ReadData();
                     //создание экземпляра класса Fixed Rate
-                    payAmount = new FixedRate(salary, amountDay);
+                    Global.Parameter _salary = new Global.Parameter();
+                    Global.Parameter _amountDay = new Global.Parameter();
+                    _salary.Value = salary;
+                    _salary.Description = Global.Properties.Resources.Salary;
+                    _amountDay.Value = amountDay;
+                    _amountDay.Description = Global.Properties.Resources.DayAmount;
+                    payAmount = new FixedRate(_salary, _amountDay);
                     break;
                 case 2:
                     //ввод данных
@@ -82,7 +88,17 @@ namespace SalaryRateConsole
                     Console.WriteLine("Enter coeficient of rate:");
                     double rate = ReadData();
                     //создание экземпляра класса Variable Rate
-                    payAmount = new VariableRate(salary1, amountDay1, rate);
+                    Global.Parameter _salary1 = new Global.Parameter();
+                    Global.Parameter _amountDay1 = new Global.Parameter();
+                    Global.Parameter _rate = new Global.Parameter();
+                    _salary1.Value = salary1;
+                    _salary1.Description = Global.Properties.Resources.Salary;
+                    _amountDay1.Value = amountDay1;
+                    _amountDay1.Description = Global.Properties.Resources.DayAmount;
+                    _rate.Value = rate;
+                    _rate.Description = Global.Properties.Resources.Rate;
+
+                    payAmount = new VariableRate(_salary1, _amountDay1, _rate);
                     break;
                 case 3:
                     //ввод данных
@@ -91,7 +107,14 @@ namespace SalaryRateConsole
                     Console.WriteLine("Enter amount of worked hour:");
                     double hourAmount = ReadData();
                     //создание экземпляра класса Hourly Rate
-                    payAmount = new HourlyRate(paidPerHour, hourAmount);
+                    Global.Parameter _paidPerHour = new Global.Parameter();
+                    Global.Parameter _hourAmount = new Global.Parameter();
+                    _paidPerHour.Value = paidPerHour;
+                    _paidPerHour.Description = Global.Properties.Resources.PaidPerHour;
+                    _hourAmount.Value = hourAmount;
+                    _hourAmount.Description = Global.Properties.Resources.HourAmount;
+
+                    payAmount = new HourlyRate(_paidPerHour, _hourAmount);
                     break;
                 case 4:
                     break;
