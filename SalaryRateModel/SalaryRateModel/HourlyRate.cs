@@ -8,8 +8,6 @@ namespace SalaryRateModel
     /// </summary>
     public class HourlyRate : Employee
     {
-        private Parameter[] _list = new Parameter[0];
-
         /// <summary>
         /// Параметризированный конструктор класса
         /// </summary>
@@ -19,11 +17,7 @@ namespace SalaryRateModel
             DataController.Validator control = new DataController.Validator();
             if (control.Validating(list))
             {
-                for (int i = 0; i < list.Length; i++)
-                {
-                    Array.Resize<Parameter>(ref _list, i + 1);
-                    this._list[i] = list[i];
-                }
+                Parameters = list;
             }
             else
             {
@@ -41,18 +35,11 @@ namespace SalaryRateModel
         {
             try
             {
-                return _list[0].Value * _list[1].Value;
+                return Parameters[0].Value * Parameters[1].Value;
             }
             catch
             {
                 return 0;
-            }
-        }
-        public override Parameter[] Parameters
-        {
-            get
-            {
-                return _list;
             }
         }
     }

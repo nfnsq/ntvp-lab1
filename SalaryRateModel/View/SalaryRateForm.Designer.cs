@@ -38,6 +38,8 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.objectControlView = new View.ObjectControl();
+            this.modifyButton = new System.Windows.Forms.Button();
             this.groupBoxObject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObject)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -45,19 +47,20 @@
             // 
             // groupBoxObject
             // 
+            this.groupBoxObject.Controls.Add(this.modifyButton);
             this.groupBoxObject.Controls.Add(this.buttonRemovePerson);
             this.groupBoxObject.Controls.Add(this.buttonAddPerson);
             this.groupBoxObject.Controls.Add(this.dataGridViewObject);
             this.groupBoxObject.Location = new System.Drawing.Point(12, 27);
             this.groupBoxObject.Name = "groupBoxObject";
-            this.groupBoxObject.Size = new System.Drawing.Size(389, 171);
+            this.groupBoxObject.Size = new System.Drawing.Size(319, 171);
             this.groupBoxObject.TabIndex = 0;
             this.groupBoxObject.TabStop = false;
             this.groupBoxObject.Text = "Objects";
             // 
             // buttonRemovePerson
             // 
-            this.buttonRemovePerson.Location = new System.Drawing.Point(289, 136);
+            this.buttonRemovePerson.Location = new System.Drawing.Point(218, 136);
             this.buttonRemovePerson.Name = "buttonRemovePerson";
             this.buttonRemovePerson.Size = new System.Drawing.Size(94, 26);
             this.buttonRemovePerson.TabIndex = 2;
@@ -67,7 +70,7 @@
             // 
             // buttonAddPerson
             // 
-            this.buttonAddPerson.Location = new System.Drawing.Point(189, 136);
+            this.buttonAddPerson.Location = new System.Drawing.Point(118, 136);
             this.buttonAddPerson.Name = "buttonAddPerson";
             this.buttonAddPerson.Size = new System.Drawing.Size(94, 26);
             this.buttonAddPerson.TabIndex = 1;
@@ -82,8 +85,9 @@
             this.dataGridViewObject.Location = new System.Drawing.Point(12, 19);
             this.dataGridViewObject.Name = "dataGridViewObject";
             this.dataGridViewObject.ReadOnly = true;
-            this.dataGridViewObject.Size = new System.Drawing.Size(371, 111);
+            this.dataGridViewObject.Size = new System.Drawing.Size(300, 111);
             this.dataGridViewObject.TabIndex = 0;
+            this.dataGridViewObject.SelectionChanged += new System.EventHandler(this.dataGridViewObject_SelectionChanged);
             // 
             // openFileDialog1
             // 
@@ -97,7 +101,7 @@
             this.searchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(413, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(344, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,11 +126,31 @@
             this.searchToolStripMenuItem.Text = "Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.SearchToolStripMenuItem_Click);
             // 
+            // objectControlView
+            // 
+            this.objectControlView.Location = new System.Drawing.Point(12, 204);
+            this.objectControlView.Name = "objectControlView";
+            this.objectControlView.Object = null;
+            this.objectControlView.ReadOnly = false;
+            this.objectControlView.Size = new System.Drawing.Size(327, 280);
+            this.objectControlView.TabIndex = 2;
+            // 
+            // modifyButton
+            // 
+            this.modifyButton.Location = new System.Drawing.Point(18, 136);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(94, 25);
+            this.modifyButton.TabIndex = 3;
+            this.modifyButton.Text = "Modify";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
+            // 
             // SalaryRateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 397);
+            this.ClientSize = new System.Drawing.Size(344, 488);
+            this.Controls.Add(this.objectControlView);
             this.Controls.Add(this.groupBoxObject);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -153,6 +177,8 @@
         private System.Windows.Forms.DataGridView dataGridViewObject;
         private System.Windows.Forms.GroupBox groupBoxObject;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private ObjectControl objectControlView;
+        private System.Windows.Forms.Button modifyButton;
     }
 }
 

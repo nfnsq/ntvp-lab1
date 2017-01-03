@@ -1,4 +1,5 @@
 ﻿using System;
+using SalaryRateModel;
 
 namespace View
 {
@@ -17,7 +18,7 @@ namespace View
         /// Генерация случайного имени 
         /// </summary>
         /// <returns></returns>
-        public string RandomName()
+        private string RandomName()
         {
             Random RandomName = new Random();
             return _personNames[RandomName.Next(_personNames.Length)];
@@ -27,7 +28,7 @@ namespace View
         /// Генерация случайной фамилии
         /// </summary>
         /// <returns></returns>
-        public string RandomSurname()
+        private string RandomSurname()
         {
             Random RandomSurname = new Random();
             return _personSurnames[RandomSurname.Next(_personSurnames.Length)];
@@ -37,7 +38,7 @@ namespace View
         /// Генерация случайного оклада
         /// </summary>
         /// <returns></returns>
-        public string Salary()
+        private string Salary()
         {
             Random salaryRandom = new Random();
             return Convert.ToString(salaryRandom.Next(10000, 999999));
@@ -48,7 +49,7 @@ namespace View
         /// Генерация случайного количества дня
         /// </summary>
         /// <returns></returns>
-        public string AmountDay()
+        private string AmountDay()
         {
             Random amountDayRandom = new Random();
             return Convert.ToString(amountDayRandom.Next(1, 369));
@@ -59,7 +60,7 @@ namespace View
         /// Генерация случайного тарифа
         /// </summary>
         /// <returns></returns>
-        public string PaidPH()
+        private string PaidPH()
         {            
             Random paidPerHourRandom = new Random();
             return Convert.ToString(paidPerHourRandom.Next(100, 9999));
@@ -69,7 +70,7 @@ namespace View
         /// Генерация случайного количества отработанного часа
         /// </summary>
         /// <returns></returns>
-        public string HourAmount()
+        private string HourAmount()
         {
 
             Random hourAmountRandom = new Random();
@@ -81,11 +82,63 @@ namespace View
         /// Генерация случайной ставки
         /// </summary>
         /// <returns></returns>
-        public string Rate()
+        private string Rate()
         {
             Random rateRandom = new Random();
-            return Convert.ToString(rateRandom.Next(1, 9));
+            return ((double)rateRandom.Next(1, 9) / 10).ToString();
         }
         
+        public Employee GetRandomPerson()
+        {
+            Random keyRand = new Random();
+            int key = keyRand.Next(3);
+
+            Employee random = null;
+            int size = 0;
+            Global.Parameter[] paramters = new Global.Parameter[size];
+            switch(key)
+            {
+                case 0:
+                    size = 2;
+                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    paramters[0].Value = double.Parse(Salary());
+                    paramters[1].Value = double.Parse(AmountDay());
+                    paramters[0].Description = Global.Properties.Resources.Salary;
+                    paramters[1].Description = Global.Properties.Resources.DayAmount;
+
+                    random = new FixedRate(paramters);
+                    random.Surname = RandomSurname();
+                    random.Name = RandomName();
+                    return random;
+                case 1:
+                    size = 3;
+                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    paramters[0].Value = double.Parse(Salary());
+                    paramters[1].Value = double.Parse(AmountDay());
+                    paramters[2].Value = double.Parse(Rate());
+
+                    paramters[0].Description = Global.Properties.Resources.Salary;
+                    paramters[1].Description = Global.Properties.Resources.DayAmount;
+                    paramters[2].Description = Global.Properties.Resources.Rate;
+
+                    random = new VariableRate(paramters);
+                    random.Surname = RandomSurname();
+                    random.Name = RandomName();
+                    return random;
+                case 2:
+                    size = 2;
+                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    paramters[0].Value = double.Parse(HourAmount());
+                    paramters[1].Value = double.Parse(PaidPH());
+                    paramters[0].Description = Global.Properties.Resources.HourAmount;
+                    paramters[1].Description = Global.Properties.Resources.PaidPerHour;
+
+                    random = new HourlyRate(paramters);
+                    random.Surname = RandomSurname();
+                    random.Name = RandomName();
+                    return random;
+            }
+            return null;
+        }
     }
 }

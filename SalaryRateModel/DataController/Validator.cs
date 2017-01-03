@@ -16,7 +16,7 @@ namespace DataController
            {
                if (list[i].Description == Global.Properties.Resources.Salary)
                {
-                   if (!Check(list[i].Value, 100, 10000000))
+                   if (!Check(list[i].Value, 10000, 999999))
                    {
                        return false;
                    }
@@ -30,25 +30,24 @@ namespace DataController
                }
                if (list[i].Description == Global.Properties.Resources.PaidPerHour)
                {
-                   if (!Check(list[i].Value, 100, 1000000))
+                   if (!Check(list[i].Value, 100, 9999))
                    {
                        return false;
                    }
                }
                if (list[i].Description == Global.Properties.Resources.HourAmount)
                {
-                   if (!Check(list[i].Value, 0, 2000))
+                   if (!Check(list[i].Value, 1, 199))
                    {
                        return false;
                    }
                }
                if (list[i].Description == Global.Properties.Resources.DayAmount)
                {
-                   if (!Check(list[i].Value, 0, 365))
+                   if (!Check(list[i].Value, 1, 369))
                    {
                        return false;
                    }
-
                }
            }
            return true;

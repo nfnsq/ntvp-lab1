@@ -13,7 +13,19 @@ namespace SalaryRateModel
         /// </summary>
         /// <returns></returns>
         public abstract double GetSummOfPay();
-        public abstract Parameter[] Parameters{ get; }
+
+        private Parameter[] _parameters;
+        public Parameter[] Parameters
+        {
+            get
+            {
+                return _parameters;
+            }
+            set
+            {
+                _parameters = value;
+            }
+        }
         
         private string _name;
         public string Name

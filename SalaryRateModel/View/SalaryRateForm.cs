@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using SalaryRateModel;
 
 namespace View
 {
@@ -11,7 +13,8 @@ namespace View
         /// для DataGridViewObject
         /// </summary>
         public static DataTable dt = new DataTable();
-
+        public static DataTable ListTable = new DataTable();
+        public static List<Employee> list = new List<Employee>();
         /// <summary>
         /// Создается объект кэша данных
         /// </summary>
@@ -30,6 +33,16 @@ namespace View
         /// </summary>
         private void SetDT()
         {
+            ListTable.TableName = "Object";
+            ListTable.Columns.Add("Name");
+            ListTable.Columns.Add("Surname");
+            ListTable.Columns.Add(Global.Properties.Resources.Rate);
+            ListTable.Columns.Add(Global.Properties.Resources.Salary);
+            ListTable.Columns.Add(Global.Properties.Resources.HourAmount);
+            ListTable.Columns.Add(Global.Properties.Resources.PaidPerHour);
+            ListTable.Columns.Add(Global.Properties.Resources.DayAmount);
+
+
             dt.TableName = "Employee";
             dt.Columns.Add("Surname");
             dt.Columns.Add("Name");
@@ -68,7 +81,8 @@ namespace View
         {
             try
             {
-                dataGridViewObject.Rows.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
+                SalaryRateForm.dt.Rows.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
+                SalaryRateForm.list.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
             }
             catch (InvalidOperationException)
             {
@@ -140,6 +154,35 @@ namespace View
             dataGridViewObject.Update();
             SearcherForm searchForm = new SearcherForm();
             searchForm.ShowDialog();
+        }
+
+        private void dataGridViewObject_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Employee employee = null;
+                int index = dataGridViewObject.SelectedCells[0].RowIndex;
+                employee = SalaryRateForm.list[index];
+                objectControlView.Object = employee;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void modifyButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = dataGridViewObject.SelectedCells[0].RowIndex;
+                AddObjectForm modifyForm = new AddObjectForm(index);
+                modifyForm.ShowDialog();
+            }
+            catch
+            {
+
+            }
         }
     }
 }
