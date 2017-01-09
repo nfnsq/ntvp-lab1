@@ -11,20 +11,21 @@ namespace UnitTests.SalaryRateModel
     [TestFixture]
     class VariableRateTest
     {
-        [TestCase(1, 1, 1, 0.05, TestName="Тест при параметрах равных 1")]
-        [TestCase(double.MinValue, double.MinValue, double.MinValue, double.NegativeInfinity,
+        [TestCase(10001, 1, 0.5, 250.025, TestName = "Тест при параметрах 10001, 1 и 0.5")]
+        [TestCase(1, 1, 1, 0, TestName = "Тест при параметрах равных 1")]
+        [TestCase(double.MinValue, double.MinValue, double.MinValue, 0,
             TestName = "Тест при параметрах равных MinValue")]
-        [TestCase(double.MinValue - 1, double.MinValue - 1, double.MinValue - 1, double.NegativeInfinity,
+        [TestCase(double.MinValue - 1, double.MinValue - 1, double.MinValue - 1, 0,
             TestName = "Тест при параметрах равных MinValue - 1")]
-        [TestCase(double.MaxValue, double.MaxValue, double.MaxValue, double.PositiveInfinity,
+        [TestCase(double.MaxValue, double.MaxValue, double.MaxValue, 0,
             TestName = "Тест при параметрах равных MaxValue")]
-        [TestCase(double.MaxValue + 1, double.MaxValue + 1, double.MaxValue + 1, double.PositiveInfinity,
+        [TestCase(double.MaxValue + 1, double.MaxValue + 1, double.MaxValue + 1, 0,
             TestName = "Тест при параметрах равных MaxValue + 1")]
         [TestCase(0, 0, 0, 0, TestName = "Тест при параметрах равных 0")]
-        [TestCase(double.NaN, double.NaN, double.NaN, double.NaN, TestName = "Тест при ставке равном NaN")]
-        [TestCase(double.NegativeInfinity, double.NegativeInfinity, double.NegativeInfinity, double.NegativeInfinity,
+        [TestCase(double.NaN, double.NaN, double.NaN, 0, TestName = "Тест при ставке равном NaN")]
+        [TestCase(double.NegativeInfinity, double.NegativeInfinity, double.NegativeInfinity, 0,
             TestName = "Тест при параметрах равных NegativeInfinity")]
-        [TestCase(double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity,
+        [TestCase(double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity, 0,
             TestName = "Тест при параметрах равных PositiveInfinity")]
         public void VariableRate(double salary, double amountDay, double rate, double res)
         {
@@ -42,7 +43,7 @@ namespace UnitTests.SalaryRateModel
 
             double result = pay.GetSummOfPay();
 
-            Assert.AreEqual(result, res);
+            Assert.AreEqual(res, result);
         }
     }
 }

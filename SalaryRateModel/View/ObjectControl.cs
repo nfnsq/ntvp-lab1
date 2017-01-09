@@ -27,47 +27,33 @@ namespace View
                     return;
                 if (_readOnly == true)
                 {
-                    foreach (Control groupBox in this.Controls)
-                    {
-                        if (groupBox is GroupBox)
-                        {
-                            foreach (Control textbox in groupBox.Controls)
-                            {
-                                if (textbox is TextBox)
-                                {
-                                    textbox.Enabled = false;
-                                }
-                            }
-                            foreach (Control radioButton in groupBox.Controls)
-                            {
-                                if (radioButton is RadioButton)
-                                {
-                                    radioButton.Enabled = false;
-                                }
-                            }
-                        }
-                    }
+                    SetReadOnly(true);
                 }
                 else
                 {
-                    foreach (Control groupBox in this.Controls)
+                    SetReadOnly(false);
+                }
+            }
+        }
+
+        private void SetReadOnly(bool state)
+        {
+            foreach (Control groupBox in this.Controls)
+            {
+                if (groupBox is GroupBox)
+                {
+                    foreach (Control textbox in groupBox.Controls)
                     {
-                        if (groupBox is GroupBox)
+                        if (textbox is TextBox)
                         {
-                            foreach (Control textbox in groupBox.Controls)
-                            {
-                                if (textbox is TextBox)
-                                {
-                                    textbox.Enabled = true;
-                                }
-                            }
-                            foreach (Control radioButton in groupBox.Controls)
-                            {
-                                if (radioButton is RadioButton)
-                                {
-                                    radioButton.Enabled = true;
-                                }
-                            }
+                            textbox.Enabled = !state;
+                        }
+                    }
+                    foreach (Control radioButton in groupBox.Controls)
+                    {
+                        if (radioButton is RadioButton)
+                        {
+                            radioButton.Enabled = !state;
                         }
                     }
                 }
@@ -239,6 +225,26 @@ namespace View
                 paidPerHourTextBox.Visible = false;
                 hourAmountTextBox.Visible = false;
             }
+        }
+
+        public void Clear()
+        {
+            foreach (Control groupBox in this.Controls)
+            {
+                if (groupBox is GroupBox)
+                {
+                    foreach (Control textbox in groupBox.Controls)
+                    {
+                        if (textbox is TextBox)
+                        {
+                            textbox.Text = "";
+                        }
+                    }
+                }
+            }
+            fixedRadioButton.Checked = false;
+            variableRadioButton.Checked = false;
+            hourlyRadioButton.Checked = false;
         }
     }
 }

@@ -72,13 +72,20 @@ namespace View
         {
             try
             {
-                SalaryRateForm.dt.Rows.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
-                SalaryRateForm.list.Collection.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
+                int count = dataGridViewObject.SelectedCells.Count;
+                if (count == 0) throw new ArgumentOutOfRangeException();
+                for (int i = 0; i < count; i++)
+                {
+                    int index = dataGridViewObject.SelectedCells[0].RowIndex;
+                    SalaryRateForm.list.Collection.RemoveAt(index);
+                    SalaryRateForm.dt.Rows.RemoveAt(index);
+                }
             }
             catch (InvalidOperationException)
             {
                 MessageBox.Show("Rows is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Rows is not selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -161,10 +168,17 @@ namespace View
         {
             try
             {
-                Employee employee = null;
-                int index = dataGridViewObject.SelectedCells[0].RowIndex;
-                employee = SalaryRateForm.list.Collection[index];
-                objectControlView.Object = employee;
+                if (dataGridViewObject.SelectedCells.Count == 0)
+                {
+                    objectControlView.Clear();
+                }
+                else
+                {
+                    Employee employee = null;
+                    int index = dataGridViewObject.SelectedCells[0].RowIndex;
+                    employee = SalaryRateForm.list.Collection[index];
+                    objectControlView.Object = employee;
+                }
             }
             catch
             {

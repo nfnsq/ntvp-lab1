@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace View
 {
@@ -41,6 +42,7 @@ namespace View
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
             _searchResult.Clear();
+            string pattern = textBoxSearchData.Text;
             if (textBoxSearchData != null)
             {
                 try
@@ -49,7 +51,7 @@ namespace View
                     {
                         foreach (string str in r.ItemArray)
                         {
-                            if (textBoxSearchData.Text == str)
+                            if (Regex.IsMatch(str, pattern))
                             {
                                  RowToTableIncreaser.DoAdd(r, _searchResult);
                             }

@@ -2,3 +2,8 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\SalaryRateModel.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Release\SalaryRateModel.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Release\SalaryRateModel.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Release\SalaryRateModel.csprojResolveAssemblyReference.cache
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\DataController.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\Global.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\DataController.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Release\Global.pdb

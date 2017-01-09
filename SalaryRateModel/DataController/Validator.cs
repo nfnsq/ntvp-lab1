@@ -16,8 +16,8 @@ namespace DataController
             tuple.Add(Global.Properties.Resources.Salary, new Tuple<int,int> (10000, 999999));
             tuple.Add(Global.Properties.Resources.Rate, new Tuple<int, int>(0, 1));
             tuple.Add(Global.Properties.Resources.PaidPerHour, new Tuple<int, int>(100, 9999));
-            tuple.Add(Global.Properties.Resources.HourAmount, new Tuple<int, int>(1, 199));
-            tuple.Add(Global.Properties.Resources.DayAmount, new Tuple<int, int>(1, 369));
+            tuple.Add(Global.Properties.Resources.HourAmount, new Tuple<int, int>(0, 199));
+            tuple.Add(Global.Properties.Resources.DayAmount, new Tuple<int, int>(0, 369));
 
             for (int i = 0; i < list.Length; i++)
             {
@@ -28,45 +28,6 @@ namespace DataController
                     return false;
                 }
             }
-
-           for (int i = 0; i < list.Length; i++)
-           {
-               if (list[i].Description == Global.Properties.Resources.Salary)
-               {
-                   if (!Check(list[i].Value, 10000, 999999))
-                   {
-                       return false;
-                   }
-               }
-               if (list[i].Description == Global.Properties.Resources.Rate)
-               {
-                   if (!Check(list[i].Value, 0, 1))
-                   {
-                       return false;
-                   }
-               }
-               if (list[i].Description == Global.Properties.Resources.PaidPerHour)
-               {
-                   if (!Check(list[i].Value, 100, 9999))
-                   {
-                       return false;
-                   }
-               }
-               if (list[i].Description == Global.Properties.Resources.HourAmount)
-               {
-                   if (!Check(list[i].Value, 1, 199))
-                   {
-                       return false;
-                   }
-               }
-               if (list[i].Description == Global.Properties.Resources.DayAmount)
-               {
-                   if (!Check(list[i].Value, 1, 369))
-                   {
-                       return false;
-                   }
-               }
-           }
            return true;
         }
 

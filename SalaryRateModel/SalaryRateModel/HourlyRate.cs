@@ -1,5 +1,6 @@
 ﻿using System;
 using Global;
+using System.Windows.Forms;
 
 namespace SalaryRateModel
 {

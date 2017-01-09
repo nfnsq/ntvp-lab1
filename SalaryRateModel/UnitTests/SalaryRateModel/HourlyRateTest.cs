@@ -11,20 +11,21 @@ namespace UnitTests.SalaryRateModel
     [TestFixture]
     class HourlyRateTest
     {
-        [TestCase(1, 1, 1, TestName = "Тест при значениях параметров равных 1")]
-        [TestCase(double.MinValue, double.MinValue, double.PositiveInfinity,
+        [TestCase(101, 1, 101, TestName = "Тест при значениях параметров 101 и 1")]
+        [TestCase(1, 1, 0, TestName = "Тест при значениях параметров равных 1")]
+        [TestCase(double.MinValue, double.MinValue, 0,
             TestName = "Тест при значениях параметров равных MinValue")]
-        [TestCase(double.MinValue - 1, double.MinValue - 1, double.PositiveInfinity,
+        [TestCase(double.MinValue - 1, double.MinValue - 1, 0,
             TestName = "Тест при значениях параметров равных MinValue - 1")]
-        [TestCase(double.MaxValue, double.MaxValue, double.PositiveInfinity,
+        [TestCase(double.MaxValue, double.MaxValue, 0,
             TestName = "Тест при значениях параметров равных MaxValue")]
-        [TestCase(double.MaxValue + 1, double.MaxValue + 1, double.PositiveInfinity,
+        [TestCase(double.MaxValue + 1, double.MaxValue + 1, 0,
             TestName = "Тест при значениях параметров равных MaxValue + 1")]
         [TestCase(0, 0, 0, TestName = "Тест при значениях параметров равных 0")]
-        [TestCase(double.NaN, double.NaN, double.NaN, TestName = "Тест при значениях параметров равных NaN")]
-        [TestCase(double.NegativeInfinity, double.NegativeInfinity, double.PositiveInfinity,
+        [TestCase(double.NaN, double.NaN, 0, TestName = "Тест при значениях параметров равных NaN")]
+        [TestCase(double.NegativeInfinity, double.NegativeInfinity, 0,
             TestName = "Тест при значениях параметров равных NegativeInfinity")]
-        [TestCase(double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity,
+        [TestCase(double.PositiveInfinity, double.PositiveInfinity, 0,
             TestName = "Тест при значениях параметров равных PositiveInfinity")]
         public void HourlyRate(double paidPerHour, double hourAmount, double res)
         {
@@ -39,7 +40,7 @@ namespace UnitTests.SalaryRateModel
 
             double result = pay.GetSummOfPay();
 
-            Assert.AreEqual(result, res);
+            Assert.AreEqual(res, result);
         }
     }
 }
