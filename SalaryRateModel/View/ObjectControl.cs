@@ -38,6 +38,13 @@ namespace View
                                     textbox.Enabled = false;
                                 }
                             }
+                            foreach (Control radioButton in groupBox.Controls)
+                            {
+                                if (radioButton is RadioButton)
+                                {
+                                    radioButton.Enabled = false;
+                                }
+                            }
                         }
                     }
                 }
@@ -52,6 +59,13 @@ namespace View
                                 if (textbox is TextBox)
                                 {
                                     textbox.Enabled = true;
+                                }
+                            }
+                            foreach (Control radioButton in groupBox.Controls)
+                            {
+                                if (radioButton is RadioButton)
+                                {
+                                    radioButton.Enabled = true;
                                 }
                             }
                         }

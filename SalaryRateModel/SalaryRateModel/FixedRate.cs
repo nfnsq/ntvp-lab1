@@ -9,6 +9,10 @@ namespace SalaryRateModel
     /// </summary>
     public class FixedRate : Employee
     {
+        public FixedRate()
+        {
+
+        }
         /// <summary>
         /// Параметризированный конструктор класса
         /// </summary>

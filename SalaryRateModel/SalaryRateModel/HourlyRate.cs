@@ -8,6 +8,10 @@ namespace SalaryRateModel
     /// </summary>
     public class HourlyRate : Employee
     {
+        public HourlyRate()
+        {
+
+        }
         /// <summary>
         /// Параметризированный конструктор класса
         /// </summary>

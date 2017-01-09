@@ -34,7 +34,7 @@ namespace View
             buttonRandomData.Visible = false;         
             #endif
             Employee employee = null;
-            employee = SalaryRateForm.list[index];
+            employee = SalaryRateForm.list.Collection[index];
             objectControl.Object = employee;
 
         }
@@ -55,7 +55,7 @@ namespace View
                 {
                     if (employee != null)
                     {
-                        SalaryRateForm.list.Add(employee);
+                        SalaryRateForm.list.Collection.Add(employee);
                         SalaryRateForm.dt.Rows.Add(employee.Surname,
                             employee.Name, employee.GetSummOfPay());
                     }
@@ -64,8 +64,8 @@ namespace View
                 {
                     if (employee != null)
                     {
-                        SalaryRateForm.list.RemoveAt(_index);
-                        SalaryRateForm.list.Insert(_index, employee);
+                        SalaryRateForm.list.Collection.RemoveAt(_index);
+                        SalaryRateForm.list.Collection.Insert(_index, employee);
                         SalaryRateForm.dt.Rows.RemoveAt(_index);
                         DataRow row = SalaryRateForm.dt.NewRow();
                         row["Name"] = employee.Name;

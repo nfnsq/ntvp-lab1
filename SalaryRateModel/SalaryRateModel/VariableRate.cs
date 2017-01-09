@@ -8,7 +8,10 @@ namespace SalaryRateModel
     /// </summary>
     public class VariableRate : Employee
     {
-        private Parameter[] _list = new Parameter[0];
+        public VariableRate()
+        {
+
+        }
 
         /// <summary>
         /// Параметризированный конструктор класса

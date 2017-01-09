@@ -3,6 +3,8 @@ using System.Data;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using SalaryRateModel;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace View
 {
@@ -13,8 +15,7 @@ namespace View
         /// для DataGridViewObject
         /// </summary>
         public static DataTable dt = new DataTable();
-        public static DataTable ListTable = new DataTable();
-        public static List<Employee> list = new List<Employee>();
+        public static EmployeeCollection list = new EmployeeCollection();
         /// <summary>
         /// Создается объект кэша данных
         /// </summary>
@@ -33,21 +34,10 @@ namespace View
         /// </summary>
         private void SetDT()
         {
-            ListTable.TableName = "Object";
-            ListTable.Columns.Add("Name");
-            ListTable.Columns.Add("Surname");
-            ListTable.Columns.Add(Global.Properties.Resources.Rate);
-            ListTable.Columns.Add(Global.Properties.Resources.Salary);
-            ListTable.Columns.Add(Global.Properties.Resources.HourAmount);
-            ListTable.Columns.Add(Global.Properties.Resources.PaidPerHour);
-            ListTable.Columns.Add(Global.Properties.Resources.DayAmount);
-
-
             dt.TableName = "Employee";
             dt.Columns.Add("Surname");
             dt.Columns.Add("Name");
             dt.Columns.Add("Pay amount");
-
         }
 
         /// <summary>
@@ -56,6 +46,7 @@ namespace View
         public SalaryRateForm()
         {
             InitializeComponent();
+            objectControlView.ReadOnly = true;
             dataGridViewObject.DataSource = dt;
             SetDT();
             SetDS();
@@ -82,7 +73,7 @@ namespace View
             try
             {
                 SalaryRateForm.dt.Rows.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
-                SalaryRateForm.list.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
+                SalaryRateForm.list.Collection.RemoveAt(dataGridViewObject.SelectedCells[0].RowIndex);
             }
             catch (InvalidOperationException)
             {
@@ -103,11 +94,16 @@ namespace View
         {
             try
             {
+                XmlSerializer serializer = new XmlSerializer(typeof(EmployeeCollection));
                 SaveFileDialog sfd = new SaveFileDialog();
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     string path = sfd.FileName;
-                    ds.WriteXml(path);
+                    using (StreamWriter writer = new StreamWriter(path))
+                    {
+                        serializer.Serialize(writer, list);
+                        writer.Close();
+                    }
                     MessageBox.Show("XML file has been succesfully saved.", "Done.");
                 }
             }
@@ -126,16 +122,21 @@ namespace View
         {
             try
             {
-                DataSet ds = new DataSet(); 
+                var deserializer = new XmlSerializer(typeof(EmployeeCollection));
                 OpenFileDialog ofd = new OpenFileDialog();
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     string path = ofd.FileName;
-                    ds.ReadXml(path); 
+                    using (StreamReader reader = new StreamReader(path))
+                    {
+                        list = (EmployeeCollection)deserializer.Deserialize(reader);
+                        reader.Close();
+                    }
                 }
-                foreach (DataRow item in ds.Tables["Employee"].Rows)
+                foreach (Employee employee in list.Collection)
                 {
-                    RowToTableIncreaser.DoAdd(item, dt);
+                    SalaryRateForm.dt.Rows.Add(employee.Surname,
+                            employee.Name, employee.GetSummOfPay());
                 }
             }
             catch
@@ -162,7 +163,7 @@ namespace View
             {
                 Employee employee = null;
                 int index = dataGridViewObject.SelectedCells[0].RowIndex;
-                employee = SalaryRateForm.list[index];
+                employee = SalaryRateForm.list.Collection[index];
                 objectControlView.Object = employee;
             }
             catch
