@@ -12,6 +12,23 @@ namespace DataController
     {
         public bool Validating(Parameter[] list)
         {
+            var tuple = new Dictionary<string,Tuple<int, int>>();
+            tuple.Add(Global.Properties.Resources.Salary, new Tuple<int,int> (10000, 999999));
+            tuple.Add(Global.Properties.Resources.Rate, new Tuple<int, int>(0, 1));
+            tuple.Add(Global.Properties.Resources.PaidPerHour, new Tuple<int, int>(100, 9999));
+            tuple.Add(Global.Properties.Resources.HourAmount, new Tuple<int, int>(1, 199));
+            tuple.Add(Global.Properties.Resources.DayAmount, new Tuple<int, int>(1, 369));
+
+            for (int i = 0; i < list.Length; i++)
+            {
+                var tmp = tuple[list[i].Description];
+
+                if (!Check(list[i].Value, tmp.Item1, tmp.Item2))
+                {
+                    return false;
+                }
+            }
+
            for (int i = 0; i < list.Length; i++)
            {
                if (list[i].Description == Global.Properties.Resources.Salary)
