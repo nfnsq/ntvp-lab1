@@ -56,7 +56,6 @@
     <Compile Include="ObjectControl.Designer.cs">
       <DependentUpon>ObjectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="RowToTableIncreaser.cs" />
     <Compile Include="RandomDataCreator.cs" />
     <Compile Include="SalaryRateForm.cs">
       <SubType>Form</SubType>

@@ -53,7 +53,8 @@ namespace View
                         {
                             if (Regex.IsMatch(str, pattern))
                             {
-                                 RowToTableIncreaser.DoAdd(r, _searchResult);
+                                _searchResult.Rows.Add(r["Surname"], r["Name"], r["Pay amount"]);
+                                break;
                             }
                         }
                     }

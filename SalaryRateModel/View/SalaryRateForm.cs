@@ -129,6 +129,7 @@ namespace View
         {
             try
             {
+                EmployeeCollection deserialized;
                 var deserializer = new XmlSerializer(typeof(EmployeeCollection));
                 OpenFileDialog ofd = new OpenFileDialog();
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -136,15 +137,17 @@ namespace View
                     string path = ofd.FileName;
                     using (StreamReader reader = new StreamReader(path))
                     {
-                        list = (EmployeeCollection)deserializer.Deserialize(reader);
+                        deserialized = (EmployeeCollection)deserializer.Deserialize(reader);
                         reader.Close();
                     }
+                    foreach (Employee employee in deserialized.Collection)
+                    {
+                        list.Collection.Add(employee);
+                        SalaryRateForm.dt.Rows.Add(employee.Surname,
+                                employee.Name, employee.GetSummOfPay());
+                    }
                 }
-                foreach (Employee employee in list.Collection)
-                {
-                    SalaryRateForm.dt.Rows.Add(employee.Surname,
-                            employee.Name, employee.GetSummOfPay());
-                }
+                
             }
             catch
             {

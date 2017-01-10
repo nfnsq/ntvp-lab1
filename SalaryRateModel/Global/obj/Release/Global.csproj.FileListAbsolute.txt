@@ -1,6 +1,0 @@
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\Global\bin\Release\Global.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\Global\bin\Release\Global.pdb
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\Global\obj\Release\Global.Properties.Resources.resources
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\Global\obj\Release\Global.csproj.GenerateResource.Cache
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\Global\obj\Release\Global.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\Global\obj\Release\Global.pdb
