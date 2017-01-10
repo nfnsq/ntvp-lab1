@@ -1,6 +1,4 @@
-﻿using Global;
-
-namespace SalaryRateModel
+﻿namespace SalaryRateModel
 {
     /// <summary>
     /// Класс Сотрудник

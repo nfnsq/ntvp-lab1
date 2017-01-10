@@ -1,0 +1,12 @@
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\SalaryRateConsole.exe.config
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\SalaryRateConsole.exe
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\SalaryRateConsole.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\Global.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\SalaryRateModel.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\DataController.dll
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\Global.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\SalaryRateModel.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\bin\Release\DataController.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\obj\Release\SalaryRateConsole.csprojResolveAssemblyReference.cache
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\obj\Release\SalaryRateConsole.exe
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateConsole\obj\Release\SalaryRateConsole.pdb

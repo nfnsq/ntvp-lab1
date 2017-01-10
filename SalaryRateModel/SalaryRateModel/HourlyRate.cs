@@ -1,5 +1,4 @@
 ﻿using System;
-using Global;
 using System.Windows.Forms;
 
 namespace SalaryRateModel
@@ -19,7 +18,7 @@ namespace SalaryRateModel
         /// <param name="list">Список входных параметров</param>
         public HourlyRate(params Parameter[] list)
         {
-            DataController.Validator control = new DataController.Validator();
+            Validator control = new Validator();
             if (control.Validating(list))
             {
                 Parameters = list;

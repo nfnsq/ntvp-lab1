@@ -95,16 +95,16 @@ namespace View
 
             Employee random = null;
             int size = 0;
-            Global.Parameter[] paramters = new Global.Parameter[size];
+            SalaryRateModel.Parameter[] paramters = new SalaryRateModel.Parameter[size];
             switch(key)
             {
                 case 0:
                     size = 2;
-                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    Array.Resize<SalaryRateModel.Parameter>(ref paramters, size);
                     paramters[0].Value = double.Parse(Salary());
                     paramters[1].Value = double.Parse(AmountDay());
-                    paramters[0].Description = Global.Properties.Resources.Salary;
-                    paramters[1].Description = Global.Properties.Resources.DayAmount;
+                    paramters[0].Description = SalaryRateModel.Properties.Resources.Salary;
+                    paramters[1].Description = SalaryRateModel.Properties.Resources.DayAmount;
 
                     random = new FixedRate(paramters);
                     random.Surname = RandomSurname();
@@ -112,14 +112,14 @@ namespace View
                     return random;
                 case 1:
                     size = 3;
-                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    Array.Resize<SalaryRateModel.Parameter>(ref paramters, size);
                     paramters[0].Value = double.Parse(Salary());
                     paramters[1].Value = double.Parse(AmountDay());
                     paramters[2].Value = double.Parse(Rate());
 
-                    paramters[0].Description = Global.Properties.Resources.Salary;
-                    paramters[1].Description = Global.Properties.Resources.DayAmount;
-                    paramters[2].Description = Global.Properties.Resources.Rate;
+                    paramters[0].Description = SalaryRateModel.Properties.Resources.Salary;
+                    paramters[1].Description = SalaryRateModel.Properties.Resources.DayAmount;
+                    paramters[2].Description = SalaryRateModel.Properties.Resources.Rate;
 
                     random = new VariableRate(paramters);
                     random.Surname = RandomSurname();
@@ -127,11 +127,11 @@ namespace View
                     return random;
                 case 2:
                     size = 2;
-                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    Array.Resize<SalaryRateModel.Parameter>(ref paramters, size);
                     paramters[0].Value = double.Parse(HourAmount());
                     paramters[1].Value = double.Parse(PaidPH());
-                    paramters[0].Description = Global.Properties.Resources.HourAmount;
-                    paramters[1].Description = Global.Properties.Resources.PaidPerHour;
+                    paramters[0].Description = SalaryRateModel.Properties.Resources.HourAmount;
+                    paramters[1].Description = SalaryRateModel.Properties.Resources.PaidPerHour;
 
                     random = new HourlyRate(paramters);
                     random.Surname = RandomSurname();

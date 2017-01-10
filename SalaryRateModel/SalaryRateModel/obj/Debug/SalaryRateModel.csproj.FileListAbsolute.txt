@@ -8,7 +8,5 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\SalaryRateModel.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\SalaryRateModel.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Debug\SalaryRateModel.csprojResolveAssemblyReference.cache
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\DataController.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\Global.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\DataController.pdb
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\bin\Debug\Global.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Debug\SalaryRateModel.Properties.Resources.resources
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\SalaryRateModel\obj\Debug\SalaryRateModel.csproj.GenerateResource.Cache

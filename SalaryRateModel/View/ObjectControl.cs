@@ -66,16 +66,16 @@ namespace View
             get
             {
                 int size = 0;
-                Global.Parameter[] paramters = new Global.Parameter[size];
+                SalaryRateModel.Parameter[] paramters = new SalaryRateModel.Parameter[size];
 
                 if (fixedRadioButton.Checked)
                 {
                     size = 2;
-                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    Array.Resize<SalaryRateModel.Parameter>(ref paramters, size);
                     paramters[0].Value = double.Parse(salaryTextBox.Text);
                     paramters[1].Value = double.Parse(amountDayTextBox.Text);
-                    paramters[0].Description = Global.Properties.Resources.Salary;
-                    paramters[1].Description = Global.Properties.Resources.DayAmount;
+                    paramters[0].Description = SalaryRateModel.Properties.Resources.Salary;
+                    paramters[1].Description = SalaryRateModel.Properties.Resources.DayAmount;
 
                     _object = new FixedRate(paramters);
                     _object.Name = personNameTextBox.Text;
@@ -84,14 +84,14 @@ namespace View
                 if (variableRadioButton.Checked)
                 {
                     size = 3;
-                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    Array.Resize<SalaryRateModel.Parameter>(ref paramters, size);
                     paramters[0].Value = double.Parse(salaryTextBox.Text);
                     paramters[1].Value = double.Parse(amountDayTextBox.Text);
                     paramters[2].Value = double.Parse(rateTextBox.Text);
 
-                    paramters[0].Description = Global.Properties.Resources.Salary;
-                    paramters[1].Description = Global.Properties.Resources.DayAmount;
-                    paramters[2].Description = Global.Properties.Resources.Rate;
+                    paramters[0].Description = SalaryRateModel.Properties.Resources.Salary;
+                    paramters[1].Description = SalaryRateModel.Properties.Resources.DayAmount;
+                    paramters[2].Description = SalaryRateModel.Properties.Resources.Rate;
 
                     _object = new VariableRate(paramters);
                     _object.Name = personNameTextBox.Text;
@@ -100,11 +100,11 @@ namespace View
                 if (hourlyRadioButton.Checked)
                 {
                     size = 2;
-                    Array.Resize<Global.Parameter>(ref paramters, size);
+                    Array.Resize<SalaryRateModel.Parameter>(ref paramters, size);
                     paramters[0].Value = double.Parse(hourAmountTextBox.Text);
                     paramters[1].Value = double.Parse(paidPerHourTextBox.Text);
-                    paramters[0].Description = Global.Properties.Resources.HourAmount;
-                    paramters[1].Description = Global.Properties.Resources.PaidPerHour;
+                    paramters[0].Description = SalaryRateModel.Properties.Resources.HourAmount;
+                    paramters[1].Description = SalaryRateModel.Properties.Resources.PaidPerHour;
 
                     _object = new HourlyRate(paramters);
                     _object.Name = personNameTextBox.Text;
@@ -128,14 +128,14 @@ namespace View
                     rateTextBox.Text = _object.Parameters[2].Value.ToString();
                 }
                 if ((_object.Parameters.Length == 2) &&
-                    (_object.Parameters[1].Description == Global.Properties.Resources.PaidPerHour))
+                    (_object.Parameters[1].Description == SalaryRateModel.Properties.Resources.PaidPerHour))
                 {
                     hourlyRadioButton.Checked = true;
                     hourAmountTextBox.Text = _object.Parameters[0].Value.ToString();
                     paidPerHourTextBox.Text = _object.Parameters[1].Value.ToString();
                 }
                 if ((_object.Parameters.Length == 2) &&
-                    (_object.Parameters[1].Description == Global.Properties.Resources.DayAmount))
+                    (_object.Parameters[1].Description == SalaryRateModel.Properties.Resources.DayAmount))
                 {
                     fixedRadioButton.Checked = true;
                     salaryTextBox.Text = _object.Parameters[0].Value.ToString();

@@ -7,7 +7,3 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\D
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Debug\UnitTests.pdb
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\Global.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\DataController.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\Global.pdb
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Debug\DataController.pdb

@@ -4,7 +4,6 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.csprojResolveAssemblyReference.cache
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.AddObjectForm.resources
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.SalaryRateForm.resources
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.Properties.Resources.resources
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.csproj.GenerateResource.Cache
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.exe
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.pdb
@@ -12,7 +11,3 @@ C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\SalaryRateModel.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.SearcherForm.resources
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\obj\Debug\View.ObjectControl.resources
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\Global.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\DataController.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\Global.pdb
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\View\bin\Debug\DataController.pdb

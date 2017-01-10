@@ -1,17 +1,17 @@
 ﻿using NUnit.Framework;
-using SalaryRateModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SalaryRateModel;
 
-namespace UnitTests.SalaryRateModel
+namespace UnitTests.SalaryRateModelTests
 {
     [TestFixture]
-    class HourlyRateTest
+    class FixedRateTest
     {
-        [TestCase(101, 1, 101, TestName = "Тест при значениях параметров 101 и 1")]
+        [TestCase(10001, 1, 500.05, TestName = "Тест при значениях параметров 10001 и 1")]
         [TestCase(1, 1, 0, TestName = "Тест при значениях параметров равных 1")]
         [TestCase(double.MinValue, double.MinValue, 0,
             TestName = "Тест при значениях параметров равных MinValue")]
@@ -27,17 +27,17 @@ namespace UnitTests.SalaryRateModel
             TestName = "Тест при значениях параметров равных NegativeInfinity")]
         [TestCase(double.PositiveInfinity, double.PositiveInfinity, 0,
             TestName = "Тест при значениях параметров равных PositiveInfinity")]
-        public void HourlyRate(double paidPerHour, double hourAmount, double res)
+        public void FixedRate(double salary, double amountDay, double res)
         {
-            Global.Parameter _paidPerHour = new Global.Parameter();
-            Global.Parameter _hourAmount = new Global.Parameter();
-            _paidPerHour.Value = paidPerHour;
-            _paidPerHour.Description = Global.Properties.Resources.PaidPerHour;
-            _hourAmount.Value = hourAmount;
-            _hourAmount.Description = Global.Properties.Resources.HourAmount;
+            Parameter _salary = new Parameter();
+            Parameter _amountDay = new Parameter();
+            _salary.Value = salary;
+            _salary.Description = SalaryRateModel.Properties.Resources.Salary;
+            _amountDay.Value = amountDay;
+            _amountDay.Description = SalaryRateModel.Properties.Resources.DayAmount;
 
-            HourlyRate pay = new HourlyRate(_paidPerHour, _hourAmount);
-
+            FixedRate pay = new FixedRate(_salary, _amountDay);
+            
             double result = pay.GetSummOfPay();
 
             Assert.AreEqual(res, result);

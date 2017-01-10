@@ -44,15 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalaryRateModel\FixedRateTest.cs" />
-    <Compile Include="SalaryRateModel\HourlyRateTest.cs" />
-    <Compile Include="SalaryRateModel\VariableRateTest.cs" />
+    <Compile Include="SalaryRateModelTests\FixedRateTest.cs" />
+    <Compile Include="SalaryRateModelTests\HourlyRateTest.cs" />
+    <Compile Include="SalaryRateModelTests\VariableRateTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Global\Global.csproj">
-      <Project>{3a5d26c8-8467-4934-8304-ec95d19d03cf}</Project>
-      <Name>Global</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SalaryRateModel\SalaryRateModel.csproj">
       <Project>{bd74dbaf-ea6a-46d5-b761-8c76dcc0cfa7}</Project>
       <Name>SalaryRateModel</Name>

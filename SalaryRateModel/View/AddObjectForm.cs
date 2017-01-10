@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using SalaryRateModel;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using Global;
+using SalaryRateModel;
 using System.Data;
 
 namespace View

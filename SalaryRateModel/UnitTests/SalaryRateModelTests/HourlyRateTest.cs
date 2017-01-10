@@ -1,17 +1,17 @@
 ﻿using NUnit.Framework;
+using SalaryRateModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SalaryRateModel;
 
-namespace UnitTests.SalaryRateModel
+namespace UnitTests.SalaryRateModelTests
 {
     [TestFixture]
-    class FixedRateTest
+    class HourlyRateTest
     {
-        [TestCase(10001, 1, 500.05, TestName = "Тест при значениях параметров 10001 и 1")]
+        [TestCase(101, 1, 101, TestName = "Тест при значениях параметров 101 и 1")]
         [TestCase(1, 1, 0, TestName = "Тест при значениях параметров равных 1")]
         [TestCase(double.MinValue, double.MinValue, 0,
             TestName = "Тест при значениях параметров равных MinValue")]
@@ -27,17 +27,17 @@ namespace UnitTests.SalaryRateModel
             TestName = "Тест при значениях параметров равных NegativeInfinity")]
         [TestCase(double.PositiveInfinity, double.PositiveInfinity, 0,
             TestName = "Тест при значениях параметров равных PositiveInfinity")]
-        public void FixedRate(double salary, double amountDay, double res)
+        public void HourlyRate(double paidPerHour, double hourAmount, double res)
         {
-            Global.Parameter _salary = new Global.Parameter();
-            Global.Parameter _amountDay = new Global.Parameter();
-            _salary.Value = salary;
-            _salary.Description = Global.Properties.Resources.Salary;
-            _amountDay.Value = amountDay;
-            _amountDay.Description = Global.Properties.Resources.DayAmount;
+            Parameter _paidPerHour = new Parameter();
+            Parameter _hourAmount = new Parameter();
+            _paidPerHour.Value = paidPerHour;
+            _paidPerHour.Description = SalaryRateModel.Properties.Resources.PaidPerHour;
+            _hourAmount.Value = hourAmount;
+            _hourAmount.Description = SalaryRateModel.Properties.Resources.HourAmount;
 
-            FixedRate pay = new FixedRate(_salary, _amountDay);
-            
+            HourlyRate pay = new HourlyRate(_paidPerHour, _hourAmount);
+
             double result = pay.GetSummOfPay();
 
             Assert.AreEqual(res, result);
