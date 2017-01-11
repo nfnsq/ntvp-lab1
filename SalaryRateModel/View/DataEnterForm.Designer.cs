@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class AddObjectForm
+    partial class DataEnterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@
             this.objectControl.Size = new System.Drawing.Size(327, 280);
             this.objectControl.TabIndex = 34;
             // 
-            // AddObjectForm
+            // DataEnterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,18 +82,18 @@
             this.Controls.Add(this.buttonRandomData);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Name = "AddObjectForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "DataEnterForm";
             this.Text = "AddObjectForm";
-            this.Load += new System.EventHandler(this.AddObjectForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonRandomData;
         private System.Windows.Forms.Button buttonCancel;
         private ObjectControl objectControl;
+        private System.Windows.Forms.Button buttonOK;
     }
 }

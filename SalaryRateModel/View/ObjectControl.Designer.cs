@@ -1,16 +1,16 @@
-п»їnamespace View
+namespace View
 {
-    partial class ObjectControl
+    public partial class ObjectControl
     {
         /// <summary> 
-        /// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
+        /// Требуется переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">РёСЃС‚РёРЅРЅРѕ, РµСЃР»Рё СѓРїСЂР°РІР»СЏРµРјС‹Р№ СЂРµСЃСѓСЂСЃ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СѓРґР°Р»РµРЅ; РёРЅР°С‡Рµ Р»РѕР¶РЅРѕ.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region РљРѕРґ, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃРѕР·РґР°РЅРЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРј РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
+        #region Код, автоматически созданный конструктором компонентов
 
         /// <summary> 
-        /// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
-        /// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
+        /// Обязательный метод для поддержки конструктора - не изменяйте 
+        /// содержимое данного метода при помощи редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
@@ -264,7 +264,6 @@
             this.Controls.Add(this.personDataGroupBox);
             this.Name = "ObjectControl";
             this.Size = new System.Drawing.Size(327, 280);
-            this.Load += new System.EventHandler(this.ObjectControl_Load);
             this.personDataGroupBox.ResumeLayout(false);
             this.personDataGroupBox.PerformLayout();
             this.countDataGroupBox.ResumeLayout(false);

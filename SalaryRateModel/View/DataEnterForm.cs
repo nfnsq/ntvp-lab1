@@ -4,19 +4,22 @@ using System.Windows.Forms;
 using SalaryRateModel;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using SalaryRateModel;
 using System.Data;
 
 namespace View
 {
-    public partial class AddObjectForm : Form
+    /// <summary>
+    /// Форма для добавления и редактирования данных сотрудников 
+    /// </summary>
+    public partial class DataEnterForm : Form
     {
         private bool _add;
         private int _index;
         /// <summary>
-        /// Инициализация формы
+        /// Конструктор для создания формы 
+        /// добавления нового объекта
         /// </summary>
-        public AddObjectForm()
+        public DataEnterForm()
         {
             this._add = true;
             InitializeComponent();
@@ -25,7 +28,12 @@ namespace View
             #endif
 
         }
-        public AddObjectForm(int index)
+        /// <summary>
+        /// Конструктор для создания формы 
+        /// редактирования выбранного объекта
+        /// </summary>
+        /// <param name="index"></param>
+        public DataEnterForm(int index)
         {
             this._index = index;
             this._add = false;
@@ -56,8 +64,6 @@ namespace View
                     if (employee != null)
                     {
                         SalaryRateForm.list.Collection.Add(employee);
-                        SalaryRateForm.dt.Rows.Add(employee.Surname,
-                            employee.Name, employee.GetSummOfPay());
                     }
                 }
                 else
@@ -66,12 +72,6 @@ namespace View
                     {
                         SalaryRateForm.list.Collection.RemoveAt(_index);
                         SalaryRateForm.list.Collection.Insert(_index, employee);
-                        SalaryRateForm.dt.Rows.RemoveAt(_index);
-                        DataRow row = SalaryRateForm.dt.NewRow();
-                        row["Name"] = employee.Name;
-                        row["Surname"] = employee.Surname;
-                        row["Pay amount"] = employee.GetSummOfPay();
-                        SalaryRateForm.dt.Rows.InsertAt(row, _index);
                     }
                 }
                 Close();
@@ -102,11 +102,6 @@ namespace View
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void AddObjectForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

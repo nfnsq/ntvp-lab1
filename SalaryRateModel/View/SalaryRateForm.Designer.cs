@@ -1,16 +1,16 @@
-п»їnamespace View
+namespace View
 {
-    partial class SalaryRateForm
+    public partial class SalaryRateForm
     {
         /// <summary>
-        /// РўСЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
+        /// Требуется переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">РёСЃС‚РёРЅРЅРѕ, РµСЃР»Рё СѓРїСЂР°РІР»СЏРµРјС‹Р№ СЂРµСЃСѓСЂСЃ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СѓРґР°Р»РµРЅ; РёРЅР°С‡Рµ Р»РѕР¶РЅРѕ.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,16 @@
             base.Dispose(disposing);
         }
 
-        #region РљРѕРґ, Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃРѕР·РґР°РЅРЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРѕРј С„РѕСЂРј Windows
+        #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// РћР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° - РЅРµ РёР·РјРµРЅСЏР№С‚Рµ
-        /// СЃРѕРґРµСЂР¶РёРјРѕРµ РґР°РЅРЅРѕРіРѕ РјРµС‚РѕРґР° РїСЂРё РїРѕРјРѕС‰Рё СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
+        /// Обязательный метод для поддержки конструктора - не изменяйте
+        /// содержимое данного метода при помощи редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
             this.groupBoxObject = new System.Windows.Forms.GroupBox();
+            this.modifyButton = new System.Windows.Forms.Button();
             this.buttonRemovePerson = new System.Windows.Forms.Button();
             this.buttonAddPerson = new System.Windows.Forms.Button();
             this.dataGridViewObject = new System.Windows.Forms.DataGridView();
@@ -39,7 +40,6 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objectControlView = new View.ObjectControl();
-            this.modifyButton = new System.Windows.Forms.Button();
             this.groupBoxObject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewObject)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -57,6 +57,16 @@
             this.groupBoxObject.TabIndex = 0;
             this.groupBoxObject.TabStop = false;
             this.groupBoxObject.Text = "Objects";
+            // 
+            // modifyButton
+            // 
+            this.modifyButton.Location = new System.Drawing.Point(18, 136);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(94, 25);
+            this.modifyButton.TabIndex = 3;
+            this.modifyButton.Text = "Modify";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
             // 
             // buttonRemovePerson
             // 
@@ -135,16 +145,6 @@
             this.objectControlView.Size = new System.Drawing.Size(327, 280);
             this.objectControlView.TabIndex = 2;
             // 
-            // modifyButton
-            // 
-            this.modifyButton.Location = new System.Drawing.Point(18, 136);
-            this.modifyButton.Name = "modifyButton";
-            this.modifyButton.Size = new System.Drawing.Size(94, 25);
-            this.modifyButton.TabIndex = 3;
-            this.modifyButton.Text = "Modify";
-            this.modifyButton.UseVisualStyleBackColor = true;
-            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
-            // 
             // SalaryRateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +153,7 @@
             this.Controls.Add(this.objectControlView);
             this.Controls.Add(this.groupBoxObject);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SalaryRateForm";
             this.Text = "SalaryRateForm";

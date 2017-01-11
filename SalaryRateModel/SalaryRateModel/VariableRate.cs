@@ -4,7 +4,8 @@ using System.Windows.Forms;
 namespace SalaryRateModel
 {
     /// <summary>
-    /// Класс, где рассчитывается сумма зарплаты по ставке
+    /// Сущность для описания сотрудника с типом 
+    /// начисления зарплаты по ставке
     /// </summary>
     public class VariableRate : Employee
     {
@@ -35,6 +36,8 @@ namespace SalaryRateModel
 
         /// <summary>
         /// Метод возвращает сумму зарплаты по ставке
+        /// в котором расчитывается сумма заплаты по типу начисления
+        /// - по ставке
         /// </summary>
         public override double GetSummOfPay()
         {

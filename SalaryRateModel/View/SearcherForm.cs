@@ -2,9 +2,13 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using SalaryRateModel;
 
 namespace View
 {
+    /// <summary>
+    /// Форма для поиска
+    /// </summary>
     public partial class SearcherForm : Form
     {
         /// <summary>
@@ -47,16 +51,14 @@ namespace View
             {
                 try
                 {
-                    foreach (DataRow r in SalaryRateForm.dt.Rows)
+                    foreach (Employee employee in SalaryRateForm.list.Collection)
                     {
-                        foreach (string str in r.ItemArray)
-                        {
+                        string str = employee.Name + employee.Surname;
                             if (Regex.IsMatch(str, pattern))
                             {
-                                _searchResult.Rows.Add(r["Surname"], r["Name"], r["Pay amount"]);
-                                break;
+                                _searchResult.Rows.Add(employee.Surname, 
+                                    employee.Name, employee.GetSummOfPay());
                             }
-                        }
                     }
                 }
                 catch

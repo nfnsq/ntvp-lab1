@@ -7,9 +7,15 @@ using System.Xml.Serialization;
 
 namespace SalaryRateModel
 {
+    /// <summary>
+    /// Сущность для описания коллекции сотрудников
+    /// </summary>
     public class EmployeeCollection
     {
         private List<Employee> _collection;
+        /// <summary>
+        /// Коллекция сотрудников
+        /// </summary>
         [XmlArray("Collection"), 
         XmlArrayItem("Fixed", typeof(FixedRate)),
         XmlArrayItem("Hourly", typeof(HourlyRate)),
@@ -21,7 +27,9 @@ namespace SalaryRateModel
                 return _collection;
             } 
         }
-
+        /// <summary>
+        /// Конструктор для создания коллекции
+        /// </summary>
         public EmployeeCollection()
         {
             _collection = new List<Employee>();

@@ -8,25 +8,30 @@ using System.IO;
 
 namespace View
 {
+    /// <summary>
+    /// Главное окно программы
+    /// </summary>
     public partial class SalaryRateForm : Form
     {
+        public static EmployeeCollection list = new EmployeeCollection();
+        
+        /// <summary>
+        /// Создается объект кэша данных
+        /// </summary>
+        private DataSet _dataSet = new DataSet();
+
         /// <summary>
         /// Создается таблица, которая является DataSource 
         /// для DataGridViewObject
         /// </summary>
-        public static DataTable dt = new DataTable();
-        public static EmployeeCollection list = new EmployeeCollection();
-        /// <summary>
-        /// Создается объект кэша данных
-        /// </summary>
-        private DataSet ds = new DataSet();
-
+        private DataTable _dataSourceTable = new DataTable();
+        
         /// <summary>
         /// Формирование DataSet
         /// </summary>
         private void SetDS()
         {
-            ds.Tables.Add(dt);
+            _dataSet.Tables.Add(_dataSourceTable);
         }
 
         /// <summary>
@@ -34,10 +39,10 @@ namespace View
         /// </summary>
         private void SetDT()
         {
-            dt.TableName = "Employee";
-            dt.Columns.Add("Surname");
-            dt.Columns.Add("Name");
-            dt.Columns.Add("Pay amount");
+            _dataSourceTable.TableName = "Employee";
+            _dataSourceTable.Columns.Add("Surname");
+            _dataSourceTable.Columns.Add("Name");
+            _dataSourceTable.Columns.Add("Pay amount");
         }
 
         /// <summary>
@@ -47,7 +52,7 @@ namespace View
         {
             InitializeComponent();
             objectControlView.ReadOnly = true;
-            dataGridViewObject.DataSource = dt;
+            dataGridViewObject.DataSource = _dataSourceTable;
             SetDT();
             SetDS();
         }
@@ -59,8 +64,9 @@ namespace View
         /// <param name="e"></param>
         private void ButtonAddPerson_Click(object sender, EventArgs e)
         {
-            AddObjectForm addObjectForm = new AddObjectForm();
+            DataEnterForm addObjectForm = new DataEnterForm();
             addObjectForm.ShowDialog();
+            UpdateTable(); 
         }
 
         /// <summary>
@@ -78,7 +84,7 @@ namespace View
                 {
                     int index = dataGridViewObject.SelectedCells[0].RowIndex;
                     SalaryRateForm.list.Collection.RemoveAt(index);
-                    SalaryRateForm.dt.Rows.RemoveAt(index);
+                    _dataSourceTable.Rows.RemoveAt(index);
                 }
             }
             catch (InvalidOperationException)
@@ -143,7 +149,7 @@ namespace View
                     foreach (Employee employee in deserialized.Collection)
                     {
                         list.Collection.Add(employee);
-                        SalaryRateForm.dt.Rows.Add(employee.Surname,
+                        _dataSourceTable.Rows.Add(employee.Surname,
                                 employee.Name, employee.GetSummOfPay());
                     }
                 }
@@ -167,6 +173,12 @@ namespace View
             searchForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Метод для обработки события
+        /// - изменение выделения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewObject_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -189,17 +201,36 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Метод для создания новой формы редактирования данных
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modifyButton_Click(object sender, EventArgs e)
         {
             try
             {
                 int index = dataGridViewObject.SelectedCells[0].RowIndex;
-                AddObjectForm modifyForm = new AddObjectForm(index);
+                DataEnterForm modifyForm = new DataEnterForm(index);
                 modifyForm.ShowDialog();
+                UpdateTable();
             }
             catch
             {
 
+            }
+        }
+
+        /// <summary>
+        /// Метод для синхронизации таблицы со списком
+        /// </summary>
+        private void UpdateTable()
+        {
+            _dataSourceTable.Clear();
+            foreach (Employee tmpEmployee in list.Collection)
+            {
+                _dataSourceTable.Rows.Add(tmpEmployee.Surname,
+                    tmpEmployee.Name, tmpEmployee.GetSummOfPay());
             }
         }
     }

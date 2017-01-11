@@ -4,8 +4,16 @@ using System.Collections.Generic;
 
 namespace SalaryRateModel
 {
+    /// <summary>
+    /// Класс для проверки корректности данных
+    /// </summary>
     public class Validator
     {
+        /// <summary>
+        /// Метод для проверки списка параметров
+        /// </summary>
+        /// <param name="list">Список проверяемых параметров</param>
+        /// <returns></returns>
         public bool Validating(Parameter[] list)
         {
             var tuple = new Dictionary<string,Tuple<int, int>>();
@@ -27,6 +35,13 @@ namespace SalaryRateModel
            return true;
         }
 
+        /// <summary>
+        /// Метод для проверки параметра
+        /// </summary>
+        /// <param name="value">Значение параметра</param>
+        /// <param name="min">Нижняя граница допустимого значения</param>
+        /// <param name="max">Верхняя граница допустимого значения</param>
+        /// <returns></returns>
         private bool Check(double value, double min, double max)
         {
             if ((value < min) || (value > max))

@@ -4,7 +4,8 @@ using System.Windows.Forms;
 namespace SalaryRateModel
 {
     /// <summary>
-    /// Класс, где рассчитывается сумма зарплаты по почасовой оплате
+    /// Сущность для описания сотрудника с типом 
+    /// начисления зарплаты по почасовой оплате
     /// </summary>
     public class HourlyRate : Employee
     {
@@ -33,7 +34,9 @@ namespace SalaryRateModel
         }
 
         /// <summary>
-        /// Метод возвращает сумму зарплаты по почасовой оплате
+        /// Реализация абстрактного метода базового класса,
+        /// в котором расчитывается сумма заплаты по типу начисления
+        /// - почасовая оплата
         /// </summary>
         public override double GetSummOfPay()
         {

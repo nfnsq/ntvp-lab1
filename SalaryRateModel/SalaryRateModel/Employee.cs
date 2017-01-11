@@ -1,18 +1,23 @@
-﻿namespace SalaryRateModel
+﻿using System.Xml.Serialization;
+using System.Collections.Generic;
+
+namespace SalaryRateModel
 {
     /// <summary>
-    /// Класс Сотрудник
+    /// Сущность для описания абстракного сотрудника
     /// </summary>
     public abstract class Employee
     {
         /// <summary>
-        /// Метод возвращает сумму зарплаты для
-        /// абстрактного класса Сотрудник
+        /// Абстрактный метод для расчета зарплаты сотрудника
         /// </summary>
         /// <returns></returns>
         public abstract double GetSummOfPay();
 
         private Parameter[] _parameters;
+        /// <summary>
+        /// Данные для расчета зарплаты сотрудника
+        /// </summary>
         public Parameter[] Parameters
         {
             get
@@ -26,6 +31,9 @@
         }
         
         private string _name;
+        /// <summary>
+        /// Имя сотрудника
+        /// </summary>
         public string Name
         {
             get
@@ -39,6 +47,9 @@
         }
 
         private string _surname;
+        /// <summary>
+        /// Фамилия сотрудника
+        /// </summary>
         public string Surname
         {
             get

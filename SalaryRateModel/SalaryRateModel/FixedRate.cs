@@ -4,10 +4,14 @@ using System.Windows.Forms;
 namespace SalaryRateModel
 {
     /// <summary>
-    /// Класс, где рассчитывается сумма зарплаты по окладу
+    /// Сущность для описания сотрудника с типом 
+    /// начисления зарплаты по окладу
     /// </summary>
     public class FixedRate : Employee
     {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
         public FixedRate()
         {
 
@@ -33,7 +37,9 @@ namespace SalaryRateModel
         }
 
         /// <summary>
-        /// Метод возвращает сумму зарплаты по окладу
+        /// Реализация абстрактного метода базового класса,
+        /// в котором расчитывается сумма заплаты по типу начисления
+        /// - по окладу 
         /// </summary>
         public override double GetSummOfPay()
         {

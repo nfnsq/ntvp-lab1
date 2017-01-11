@@ -1,6 +1,6 @@
-﻿namespace View
+namespace View
 {
-    partial class SearcherForm
+    public partial class SearcherForm
     {
         /// <summary>
         /// Required designer variable.
@@ -83,6 +83,7 @@
             this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewResult.Location = new System.Drawing.Point(6, 19);
             this.dataGridViewResult.Name = "dataGridViewResult";
+            this.dataGridViewResult.ReadOnly = true;
             this.dataGridViewResult.Size = new System.Drawing.Size(360, 131);
             this.dataGridViewResult.TabIndex = 0;
             // 
@@ -93,6 +94,7 @@
             this.ClientSize = new System.Drawing.Size(396, 250);
             this.Controls.Add(this.Results);
             this.Controls.Add(this.Search);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SearcherForm";
             this.Text = "SearchForm";
             this.Search.ResumeLayout(false);

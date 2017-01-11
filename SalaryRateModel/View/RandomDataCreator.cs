@@ -87,7 +87,11 @@ namespace View
             Random rateRandom = new Random();
             return ((double)rateRandom.Next(1, 9) / 10).ToString();
         }
-        
+        /// <summary>
+        /// Метод для получения случайных значений параметров
+        /// сущности сотрудника
+        /// </summary>
+        /// <returns></returns>
         public Employee GetRandomPerson()
         {
             Random keyRand = new Random();
