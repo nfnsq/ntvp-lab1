@@ -78,7 +78,7 @@ namespace View
         {
             try
             {
-                int count = dataGridViewObject.SelectedCells.Count;
+                int count = dataGridViewObject.SelectedRows.Count;
                 if (count == 0) throw new ArgumentOutOfRangeException();
                 for (int i = 0; i < count; i++)
                 {
@@ -211,7 +211,7 @@ namespace View
             try
             {
                 int index = dataGridViewObject.SelectedCells[0].RowIndex;
-                DataEnterForm modifyForm = new DataEnterForm(index);
+                DataEnterForm modifyForm = new DataEnterForm(list.Collection[index]);
                 modifyForm.ShowDialog();
                 UpdateTable();
             }

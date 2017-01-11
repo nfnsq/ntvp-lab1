@@ -6,35 +6,13 @@
     /// </summary>
     public struct Parameter
     {
-        private double _value;
         /// <summary>
         /// Значение параметра
         /// </summary>
-        public double Value
-        {
-            get
-            {
-                return _value;
-            }
-            set
-            {
-                _value = value;
-            }
-        }
-        private string _description;
+        public double Value { get; set; }
         /// <summary>
         /// Описание параметра
         /// </summary>
-        public string Description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                _description = value;
-            }
-        }
+        public string Description { get; set; }
     }
 }

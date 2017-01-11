@@ -14,7 +14,7 @@ namespace View
     public partial class DataEnterForm : Form
     {
         private bool _add;
-        private int _index;
+        private Employee _employee;
         /// <summary>
         /// Конструктор для создания формы 
         /// добавления нового объекта
@@ -33,16 +33,14 @@ namespace View
         /// редактирования выбранного объекта
         /// </summary>
         /// <param name="index"></param>
-        public DataEnterForm(int index)
+        public DataEnterForm(Employee employee)
         {
-            this._index = index;
             this._add = false;
+            this._employee = employee;
             InitializeComponent();
             #if !DEBUG
             buttonRandomData.Visible = false;         
             #endif
-            Employee employee = null;
-            employee = SalaryRateForm.list.Collection[index];
             objectControl.Object = employee;
 
         }
@@ -59,6 +57,7 @@ namespace View
             {            
                 Employee employee = null;
                 employee = objectControl.Object;
+                int index = SalaryRateForm.list.Collection.IndexOf(_employee);
                 if (_add)
                 {
                     if (employee != null)
@@ -70,8 +69,8 @@ namespace View
                 {
                     if (employee != null)
                     {
-                        SalaryRateForm.list.Collection.RemoveAt(_index);
-                        SalaryRateForm.list.Collection.Insert(_index, employee);
+                        SalaryRateForm.list.Collection.RemoveAt(index);
+                        SalaryRateForm.list.Collection.Insert(index, employee);
                     }
                 }
                 Close();

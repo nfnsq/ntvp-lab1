@@ -14,52 +14,17 @@ namespace SalaryRateModel
         /// <returns></returns>
         public abstract double GetSummOfPay();
 
-        private Parameter[] _parameters;
         /// <summary>
         /// Данные для расчета зарплаты сотрудника
         /// </summary>
-        public Parameter[] Parameters
-        {
-            get
-            {
-                return _parameters;
-            }
-            set
-            {
-                _parameters = value;
-            }
-        }
-        
-        private string _name;
+        public Parameter[] Parameters { get; set; }
         /// <summary>
         /// Имя сотрудника
         /// </summary>
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-
-        private string _surname;
+        public string Name { get; set; }
         /// <summary>
         /// Фамилия сотрудника
         /// </summary>
-        public string Surname
-        {
-            get
-            {
-                return _surname;
-            }
-            set
-            {
-                _surname = value;
-            }
-        }
+        public string Surname { get; set; }
     }
 }
