@@ -1,18 +1,65 @@
-<?xml version="1.0" standalone="yes"?>
-<NewDataSet>
-  <Employee>
-    <Surname>Hunter</Surname>
-    <Name>Bob</Name>
-    <Pay_x0020_amount>770362,2</Pay_x0020_amount>
-  </Employee>
-  <Employee>
-    <Surname>Tatch</Surname>
-    <Name>Dean</Name>
-    <Pay_x0020_amount>1243754</Pay_x0020_amount>
-  </Employee>
-  <Employee>
-    <Surname>Wayne</Surname>
-    <Name>Alice</Name>
-    <Pay_x0020_amount>62621</Pay_x0020_amount>
-  </Employee>
-</NewDataSet>
+<?xml version="1.0" encoding="utf-8"?>
+<EmployeeCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Collection>
+    <Hourly>
+      <Parameters>
+        <Parameter>
+          <Value>154</Value>
+          <Description>hour amount</Description>
+        </Parameter>
+        <Parameter>
+          <Value>7750</Value>
+          <Description>paid  per hour</Description>
+        </Parameter>
+      </Parameters>
+      <Name>Dean</Name>
+      <Surname>Tatch</Surname>
+    </Hourly>
+    <Fixed>
+      <Parameters>
+        <Parameter>
+          <Value>292622</Value>
+          <Description>salary</Description>
+        </Parameter>
+        <Parameter>
+          <Value>106</Value>
+          <Description>day amount</Description>
+        </Parameter>
+      </Parameters>
+      <Name>Bob</Name>
+      <Surname>Hunter</Surname>
+    </Fixed>
+    <Variable>
+      <Parameters>
+        <Parameter>
+          <Value>410359</Value>
+          <Description>salary</Description>
+        </Parameter>
+        <Parameter>
+          <Value>149</Value>
+          <Description>day amount</Description>
+        </Parameter>
+        <Parameter>
+          <Value>0.4</Value>
+          <Description>rate</Description>
+        </Parameter>
+      </Parameters>
+      <Name>Cara</Name>
+      <Surname>Bee</Surname>
+    </Variable>
+    <Fixed>
+      <Parameters>
+        <Parameter>
+          <Value>130027</Value>
+          <Description>salary</Description>
+        </Parameter>
+        <Parameter>
+          <Value>45</Value>
+          <Description>day amount</Description>
+        </Parameter>
+      </Parameters>
+      <Name>Alice</Name>
+      <Surname>Wayne</Surname>
+    </Fixed>
+  </Collection>
+</EmployeeCollection>
