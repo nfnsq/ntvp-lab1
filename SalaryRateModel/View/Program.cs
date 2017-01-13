@@ -1,12 +1,12 @@
-п»їusing System;
+using System;
 using System.Windows.Forms;
 
 namespace View
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
-        /// Р“Р»Р°РІРЅР°СЏ С‚РѕС‡РєР° РІС…РѕРґР° РґР»СЏ РїСЂРёР»РѕР¶РµРЅРёСЏ.
+        /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
         static void Main()

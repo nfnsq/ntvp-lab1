@@ -1,36 +1,49 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace SalaryRateModel
 {
     /// <summary>
-    /// Класс, где рассчитывается сумма зарплаты по
-    /// ставке
+    /// Сущность для описания сотрудника с типом 
+    /// начисления зарплаты по ставке
     /// </summary>
-    public class VariableRate : IEmployee
+    public class VariableRate : Employee
     {
-        private double[] _list = new double[0];
+        public VariableRate()
+        {
+
+        }
 
         /// <summary>
         /// Параметризированный конструктор класса
         /// </summary>
         /// <param name="list">Список входных параметров</param>
-        public VariableRate(params double[] list)
+        public VariableRate(params Parameter[] list)
         {
-            for (int i = 0; i < list.Length; i++)
+            Validator control = new Validator();
+            if (control.Validating(list))
             {
-                Array.Resize<double>(ref _list, i + 1);
-                this._list[i] = list[i];
+                Parameters = list;
+            }
+            else
+            {
+                #if !DEBUG
+                MessageBox.Show("Invalid data. Please, try again.",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                #endif
             }
         }
 
         /// <summary>
         /// Метод возвращает сумму зарплаты по ставке
+        /// в котором расчитывается сумма заплаты по типу начисления
+        /// - по ставке
         /// </summary>
-        public double GetSummOfPay()
+        public override double GetSummOfPay()
         {
             try
             {
-                return _list[2] / 20 * _list[0] * _list[1];
+                return Parameters[2].Value / 20 * Parameters[0].Value * Parameters[1].Value;
             }
             catch
             {

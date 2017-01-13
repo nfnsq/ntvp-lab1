@@ -1,42 +1,57 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace SalaryRateModel
 {
     /// <summary>
-    /// Класс, где рассчитывается сумма зарплаты по 
-    /// окладу
+    /// Сущность для описания сотрудника с типом 
+    /// начисления зарплаты по окладу
     /// </summary>
-    public class FixedRate : IEmployee
+    public class FixedRate : Employee
     {
-        private double[] _list = new double[0];
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        public FixedRate()
+        {
 
+        }
         /// <summary>
         /// Параметризированный конструктор класса
         /// </summary>
         /// <param name="list">Список входных параметров</param>
-        public FixedRate(params double[] list)
+        public FixedRate(params Parameter[] list)
         {
-            for (int i = 0; i < list.Length; i++)
+            Validator control = new Validator();
+            if (control.Validating(list))
             {
-                Array.Resize<double>(ref _list, i + 1);
-                this._list[i] = list[i];
+                Parameters = list;
+            }
+            else
+            {
+                #if !DEBUG
+                MessageBox.Show("Invalid data. Please, try again.",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                #endif
             }
         }
 
         /// <summary>
-        /// Метод возвращает сумму зарплаты по окладу
+        /// Реализация абстрактного метода базового класса,
+        /// в котором расчитывается сумма заплаты по типу начисления
+        /// - по окладу 
         /// </summary>
-        public double GetSummOfPay()
+        public override double GetSummOfPay()
         {
             try
             {
-                return _list[1] / 20 * _list[0];
+                return Parameters[1].Value / 20 * Parameters[0].Value;
             }
             catch
             {
                 return 0;
             }
         }
-
+        
     }
 }
