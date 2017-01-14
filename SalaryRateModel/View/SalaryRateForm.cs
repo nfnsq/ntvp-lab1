@@ -78,9 +78,10 @@ namespace View
         {
             try
             {
-                int count = dataGridViewObject.SelectedRows.Count;
-                if (count == 0) throw new ArgumentOutOfRangeException();
-                for (int i = 0; i < count; i++)
+                int cellCount = dataGridViewObject.SelectedCells.Count;
+                int rowCount = dataGridViewObject.SelectedRows.Count;
+                if ((rowCount == 0)&&(cellCount == 0)) throw new ArgumentOutOfRangeException();
+                for (int i = 0; i < dataGridViewObject.SelectedCells.Count; i++)
                 {
                     int index = dataGridViewObject.SelectedCells[0].RowIndex;
                     SalaryRateForm.list.Collection.RemoveAt(index);
