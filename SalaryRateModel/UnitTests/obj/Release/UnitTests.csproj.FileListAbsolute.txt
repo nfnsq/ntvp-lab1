@@ -1,13 +1,9 @@
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Release\UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\UnitTests.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\UnitTests.pdb
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\Global.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\nunit.framework.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\SalaryRateModel.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\DataController.dll
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\Global.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\SalaryRateModel.pdb
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\nunit.framework.xml
-C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\bin\Release\DataController.pdb
+C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Release\UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Release\UnitTests.dll
 C:\Users\интант\Desktop\нтвп\ntvp-lab1\SalaryRateModel\UnitTests\obj\Release\UnitTests.pdb
